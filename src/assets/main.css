@@ -1,15 +1,48 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@plugin '@midudev/tailwind-animations';
 
 @theme static {
-  --color-green-50: oklch(90.98% 0.04338 166.72);
-  --color-green-100: oklch(88.46% 0.05417 166.29);
-  --color-green-200: oklch(83.957% 0.07763 165.13);
-  --color-green-300: oklch(79.343% 0.09927 163.52);
-  --color-green-400: oklch(74.927% 0.11835 162.26);
-  --color-green-500: oklch(70.253% 0.13197 160.37);
-  --color-green-600: oklch(58.426% 0.10793 160.73);
-  --color-green-700: oklch(45.657% 0.08188 161.06);
-  --color-green-800: oklch(32.298% 0.05338 161.83);
-  --color-green-900: oklch(17.276% 0.02184 161.78);
+    --color-blue-50: oklch(90.98% 0.04338 166.72);
+    --color-blue-100: oklch(88.46% 0.05417 166.29);
+    --color-blue-200: oklch(83.957% 0.07763 165.13);
+    --color-blue-300: oklch(79.343% 0.09927 163.52);
+    --color-blue-400: oklch(74.927% 0.11835 162.26);
+    --color-blue-500: oklch(70.253% 0.13197 160.37);
+    --color-blue-600: oklch(58.426% 0.10793 160.73);
+    --color-blue-700: oklch(45.657% 0.08188 161.06);
+    --color-blue-800: oklch(32.298% 0.05338 161.83);
+    --color-blue-900: oklch(17.276% 0.02184 161.78);
+
+    --color-green-50: oklch(0.86 0.08 296.72);
+    --color-green-100: oklch(0.81 0.12 295.87);
+    --color-green-200: oklch(0.69 0.19 293.4);
+    --color-green-300: oklch(0.63 0.23 290.4);
+    --color-green-400: oklch(0.55 0.28 284.39);
+    --color-green-500: oklch(0.54 0.27 284.37);
+    --color-green-600: oklch(0.47 0.24 284.71);
+    --color-green-700: oklch(0.48 0.28 279.54);
+    --color-green-800: oklch(0.34 0.2 280.03);
+    --color-green-900: oklch(0.2 0.12 281.71);
+}
+
+@layer base {
+    button {
+        @apply cursor-pointer;
+    }
+}
+
+@layer components {
+    .app-bg {
+         @apply !bg-gradient-to-br !from-default via-accented !to-default;
+    }
+
+    .text-primary-gradient {
+        @apply bg-linear-to-r from-primary-200 to-primary bg-clip-text text-transparent;
+    }
+
+    .text-default-gradient {
+        @apply bg-linear-to-r from-neutral-800 to-default bg-clip-text text-transparent;
+    }
+
 }

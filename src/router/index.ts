@@ -1,16 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+
+
+import HomePage from '@pages/HomePage.vue';
+import AboutPage from '@pages/AboutPage.vue';
+import ServicesPage from '@pages/ServicesPage.vue';
+import ContactPage from '@pages/ContactPage.vue';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView,
-    },
-    // Agrega más rutas aquí
-  ],
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: [
+        {
+            path: '',
+            name: 'home',
+            component: HomePage,
+        },
+        {
+            path: '/nosotros',
+            name: 'about',
+            component: AboutPage,
+        },
+        {
+            path: '/servicios',
+            name: 'services',
+            component: ServicesPage,
+        },
+        {
+            path: '/contacto',
+            name: 'contact',
+            component: ContactPage,
+        },
+    ],
 });
 
 export default router;
