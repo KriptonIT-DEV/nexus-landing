@@ -32,7 +32,7 @@ const services = [
 <template>
   <section
     class="bg-no-repeat bg-cover h-screen bg-[right_50%_bottom_0%]"
-    style="background-image: url('/src/assets/imgs/banner-main.png'); "
+    style="background-image: url('/imgs/banner-main.png'); "
   />
   <div class="max-w-[var(--ui-container)] mx-auto">
     <section class="absolute z-10 inset-0 justify-evenly size-full flex items-center">
