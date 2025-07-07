@@ -3,8 +3,19 @@ import { useColorMode } from '@vueuse/core'
 import { ref, computed } from "vue";
 import type { NavigationMenuItem } from '@nuxt/ui';
 
+import { useRouter } from "vue-router";
+
 // assets
 import LogoSVG from "@assets/components/LogoSVG.vue";
+
+interface PropItem {
+    icon: string,
+    id: string
+    label: string
+    to: string
+}
+
+const router = useRouter();
 
 const mode = useColorMode()
 const themeCom = computed(() => {
@@ -24,25 +35,78 @@ const items = ref<NavigationMenuItem[][]>([
         {
             label: 'Inicio',
             icon: 'i-lucide-house',
+            id: 'home',
             to: '/',
-        },
-        {
-            label: 'Servicios',
-            icon: 'i-lucide-message-circle',
-            to: '/servicios',
+            active: false
         },
         {
             label: '¿Porque nosotros?',
             icon: 'i-lucide-user-check',
-            to: '/nosotros',
+            id: 'whyus',
+            to: '/',
+            active: false
+
         },
+        {
+            label: 'Servicios',
+            icon: 'i-lucide-message-circle',
+            id: 'services',
+            to: '/',
+            active: false
+        },
+        
         {
             label: 'Contacto',
             icon: 'i-lucide-phone',
             to: '/contacto',
+            id: 'contact',
+            active: false
         }
     ],
-])
+]);
+
+
+function redirectToScroll(value: PropItem) {
+    for (let index = 0; index < items.value[0].length; index++) {
+        const element = items.value[0][index];
+        items.value[0][index].active = false
+
+        if (element.id === value.id) {
+            items.value[0][index].active = true
+            router.push(value.to);
+        }
+    }
+
+    if (value.id === 'home') {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    if (value.id === 'services') {
+        window.scrollTo({
+            top: 1600,
+            behavior: 'smooth'
+        });
+    }
+
+    
+    if (value.id === 'whyus') {
+        window.scrollTo({
+            top: 800,
+            behavior: 'smooth'
+        });
+    }
+
+    if (value.id === 'contact') {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
 </script>
 
 <template>
@@ -60,9 +124,24 @@ const items = ref<NavigationMenuItem[][]>([
       :items="items"
       :ui="{
         list: 'space-x-3',
-        link: 'px-4 py-2'
+        link: 'p-0',
       }"
-    />
+    >
+      <template #item="{ item }">
+        <div
+          class="flex space-x-2 px-3 py-2 items-center"
+          @click.prevent="redirectToScroll(item as PropItem)"
+        >
+          <UIcon
+            :name="item.icon"
+            class="size-5"
+          />
+          <span>
+            {{ item.label }}
+          </span>
+        </div>
+      </template>
+    </UNavigationMenu>
 
     <div class="flex space-x-5 items-center">
       <!-- to the tennat app -->

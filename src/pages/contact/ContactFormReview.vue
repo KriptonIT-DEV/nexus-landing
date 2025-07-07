@@ -6,53 +6,57 @@ import type { CheckboxGroupItem } from '@nuxt/ui'
 
 const items = ref<CheckboxGroupItem[]>([
     {
-        label: 'WhatsApp',
-        iconsvg: 'whatsapp.svg',
-        id: 'whatsapp'
+        label: 'Busqueda en Google',
+        iconsvg: 'chrome.svg',
+        id: 'websearch'
     },
     {
-        label: 'Instagram',
-        iconsvg: 'instagram.svg',
-        id: 'instagram'
+        label: 'Chat IA',
+        iconsvg: 'chatia.svg',
+        id: 'chatia'
     },
     {
-        label: 'Messenger',
-        iconsvg: 'messenger.svg',
-        id: 'messenger'
+        label: 'Video de YouTube',
+        iconsvg: 'youtube.svg',
+        id: 'videoyoutube'
     },
     {
-        label: 'Web Widget',
-        iconsvg: 'webwidget.svg',
-        id: 'widget'
+        label: 'LinkedIn',
+        iconsvg: 'linkedin.svg',
+        id: 'linkedin'
+    },
+    {
+        label: 'Por recomendación',
+        iconsvg: 'byrecomendation.svg',
+        id: 'byrecomendation'
+    },
+    {
+        label: 'Redes sociales',
+        iconsvg: 'social.svg',
+        id: 'bysocial'
     }
-
 ]);
-const itemsSelect = ref<CheckboxGroupItem[]>(['1-5', '5-10', '+10'])
 
 const schema = object({
-    channels: string().required('Seleccione canales correctamente'),
-    num_agents: string().required('Ingrese nro de agentes correctamente'),
-    description: string().required('Ingrese descripcion correctamente'),
+    options: string().required('Seleccione canales correctamente'),
+    notifications: string(),
 })
 
 type Schema = InferType<typeof schema>
 
 const state = reactive({
-    channels: undefined,
-    num_agents: undefined,
-    description: undefined,
+    options: undefined,
+    notifications: undefined,
 })
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
     console.log(event);
 }
-
 function getImageUrl(name: string) {
     const url = new URL(`../../assets/svgs/${name}`, import.meta.url).href
     return url;
 }
 </script>
-
 <template>
   <UForm
     :schema="schema"
@@ -60,15 +64,15 @@ function getImageUrl(name: string) {
     class="grid grid-cols-6 gap-5 my-10"
     @submit="onSubmit"
   >
-    <div class="col-span-3 grid grid-cols">
+    <div class="col-span-6 grid grid-cols">
       <div class="col-span-3">
         <UFormField
           size="xl"
-          label="Selecciona que canales deseas:"
+          label="Por que medio digital llegaste a Konnect :"
           name="website"
         >
           <UCheckboxGroup
-            v-model="state.channels"
+            v-model="state.options"
             color="primary"
             size="xl"
             variant="card"
@@ -76,7 +80,7 @@ function getImageUrl(name: string) {
             value-key="id"
             :items="items"
             :ui="{
-              fieldset: 'grid items-center mt-5 grid-cols-2 gap-5',
+              fieldset: 'grid items-center mt-5 grid-cols-3 gap-5',
               item: 'flex items-center space-x-2',
             }"
           >
@@ -85,6 +89,7 @@ function getImageUrl(name: string) {
                 <img
                   :src="`${getImageUrl(item.iconsvg)}`"
                   :alt="item.id"
+                  width="30"
                 >
                 <span>{{ item.label }}</span>
               </article>
@@ -93,32 +98,16 @@ function getImageUrl(name: string) {
         </UFormField>
       </div>
     </div>
-    <div class="col-span-3">
+    <div class="col-span-6">
       <div class="flex flex-col space-y-6">
         <UFormField
           size="xl"
-          label="Nro de agentes"
+          label="Deseas recibir notificaciones de Konnect"
           name="website"
         >
-          <USelect
-            v-model="state.num_agents"
-            icon="i-lucide-users"
-            size="xl"
-            class="w-full"
-            placeholder="Ejem: 1-5"
-            :items="itemsSelect"
-          />
-        </UFormField>
-        <UFormField
-          size="xl"
-          label="Cuéntanos, ¿cómo te ayudaran nuestras soluciones?"
-          name="position"
-        >
-          <UTextarea
-            v-model="state.description"
-            placeholder="Ejem: Atender tickets de ventas en WhatsApp"
-            size="xl"
-            class="w-full"
+          <UCheckbox
+            v-model="state.notifications"
+            label="Recibirás avisos de las nuevas funcionalidades de Konnect360 va integrando"
           />
         </UFormField>
       </div>

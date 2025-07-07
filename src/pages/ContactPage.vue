@@ -5,6 +5,7 @@ import { useTemplateRef } from 'vue';
 // components
 import ContactForm from "./contact/ContactForm.vue";
 import ContactFormConfig from "./contact/ContactFormConfig.vue";
+import ContactFormReview from "./contact/ContactFormReview.vue";
 
 const items: StepperItem[] = [
     {
@@ -53,6 +54,9 @@ const stepper = useTemplateRef('stepper');
           </div>
           <div v-if="item.key === 'account'">
             <ContactFormConfig />
+          </div>
+          <div v-if="item.key === 'finish'">
+            <ContactFormReview />
           </div>
         </template>
       </UStepper>
