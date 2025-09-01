@@ -23,7 +23,7 @@ function changeTheme(value: boolean) {
 }
 
 function redirectToLogin() {
-    window.location.href = 'https://www.konnect-360.com/app';
+    window.open('https://www.konnect-360.pe/', '_blank');
 }
 
 </script>

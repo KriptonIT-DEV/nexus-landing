@@ -216,7 +216,7 @@ const services = [
           <picture class="col-span-2 relative flex justify-center">
             <img
               class="w-2/3"
-              src="@assets/imgs/image-mobile.png"
+              src="@assets/imgs/image_product.png"
               alt="Services image"
             >
 
@@ -270,6 +270,7 @@ const services = [
             variant="solid"
             class="text-primary bg-white hover:text-white p-3"
             icon="i-lucide-arrow-right"
+            to="/contacto"
           >
             Contacto
           </UButton>
