@@ -16,16 +16,16 @@ const router = createRouter({
             name: 'home',
             component: HomePage,
         },
-        {
-            path: '/nosotros',
-            name: 'about',
-            component: AboutPage,
-        },
-        {
-            path: '/servicios',
-            name: 'services',
-            component: ServicesPage,
-        },
+        // {
+        //     path: '/nosotros',
+        //     name: 'about',
+        //     component: AboutPage,
+        // },
+        // {
+        //     path: '/servicios',
+        //     name: 'services',
+        //     component: ServicesPage,
+        // },
         {
             path: '/contacto',
             name: 'contact',
@@ -40,6 +40,10 @@ const router = createRouter({
             path: '/privacidad',
             name: 'privacy',
             component: PrivacyPage,
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            redirect: { name: 'home' },
         }
     ],
 });
