@@ -23,7 +23,7 @@ function changeTheme(value: boolean) {
 }
 
 function redirectToLogin() {
-    window.open('https://www.konnect-360.pe/', '_blank');
+    window.open('https://crm.konnect-360.com/', '_blank');
 }
 
 </script>
