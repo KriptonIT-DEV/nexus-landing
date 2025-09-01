@@ -66,7 +66,7 @@
             condiciones y se refiere a todas nuestras aplicaciones,
             herramientas y plataformas basadas en la web a las que se ha
             suscrito en virtud de un Formulario de pedido (Pasarela de
-            Stripe) accesibles a través de https://www.konnect-360.pe y
+            Stripe) accesibles a través de https://www.konnect-360.com y
             cualquier producto y servicio auxiliar, incluido el alojamiento
             de sitios web, que le proporcionamos.
           </p>

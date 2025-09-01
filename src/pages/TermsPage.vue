@@ -55,7 +55,7 @@
           <p class="mb-4">
             <b>Sitio Web:</b> Todas las páginas, contenidos y materiales
             almacenados y que se pueden visualizar bajo el dominio
-            www.konnect-360.pe
+            www.konnect-360.com
             <br>El término Sitio Web hace referencia a la parte visible
             durante la navegación (parte pública).
           </p>
@@ -137,8 +137,8 @@
             indicada o, si lo prefiere, ponerse en contacto a través del
             correo electrónico soporte@kriptonit.com.pe Asimismo, se informa
             que Konnect-360 es la compañía titular del Sitio Web
-            www.konnect-360.pe , así como de los dominios
-            https://www.konnect-360.pe
+            www.konnect-360.com , así como de los dominios
+            https://www.konnect-360.com
           </p>
           <p class="mb-4">
             El no ejercicio o ejecución por parte de Konnect-360 de cualquier
