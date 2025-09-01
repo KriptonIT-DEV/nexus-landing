@@ -5,6 +5,8 @@ import HomePage from '@pages/HomePage.vue';
 import AboutPage from '@pages/AboutPage.vue';
 import ServicesPage from '@pages/ServicesPage.vue';
 import ContactPage from '@pages/ContactPage.vue';
+import TermsPage from "@pages/TermsPage.vue";
+import PrivacyPage from "@pages/PrivacyPage.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +31,16 @@ const router = createRouter({
             name: 'contact',
             component: ContactPage,
         },
+        {
+            path: '/terminos',
+            name: 'terms',
+            component: TermsPage,
+        },
+        {
+            path: '/privacidad',
+            name: 'privacy',
+            component: PrivacyPage,
+        }
     ],
 });
 

@@ -1,21 +1,12 @@
 <script setup lang="ts">
 import { useColorMode } from '@vueuse/core'
-import { ref, computed } from "vue";
-import type { NavigationMenuItem } from '@nuxt/ui';
-
-import { useRouter } from "vue-router";
+import { computed } from "vue";
 
 // assets
 import LogoSVG from "@assets/components/LogoSVG.vue";
-
-interface PropItem {
-    icon: string,
-    id: string
-    label: string
-    to: string
-}
-
-const router = useRouter();
+// composables
+import { useScrollComposable } from "@composables/useScrollComposable";
+import type { PropItem } from "@composables/useScrollComposable";
 
 const mode = useColorMode()
 const themeCom = computed(() => {
@@ -24,87 +15,15 @@ const themeCom = computed(() => {
     return {
         icon,
     }
-})
+});
+const { items, toScrollRoute } = useScrollComposable();
 
 function changeTheme(value: boolean) {
     mode.value = value ? 'light' : 'dark'
 }
 
-const items = ref<NavigationMenuItem[][]>([
-    [
-        {
-            label: 'Inicio',
-            icon: 'i-lucide-house',
-            id: 'home',
-            to: '/',
-            active: false
-        },
-        {
-            label: '¿Porque nosotros?',
-            icon: 'i-lucide-user-check',
-            id: 'whyus',
-            to: '/',
-            active: false
-
-        },
-        {
-            label: 'Servicios',
-            icon: 'i-lucide-message-circle',
-            id: 'services',
-            to: '/',
-            active: false
-        },
-        
-        {
-            label: 'Contacto',
-            icon: 'i-lucide-phone',
-            to: '/contacto',
-            id: 'contact',
-            active: false
-        }
-    ],
-]);
-
-
-function redirectToScroll(value: PropItem) {
-    for (let index = 0; index < items.value[0].length; index++) {
-        const element = items.value[0][index];
-        items.value[0][index].active = false
-
-        if (element.id === value.id) {
-            items.value[0][index].active = true
-            router.push(value.to);
-        }
-    }
-
-    if (value.id === 'home') {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    if (value.id === 'services') {
-        window.scrollTo({
-            top: 1600,
-            behavior: 'smooth'
-        });
-    }
-
-    
-    if (value.id === 'whyus') {
-        window.scrollTo({
-            top: 800,
-            behavior: 'smooth'
-        });
-    }
-
-    if (value.id === 'contact') {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+function redirectToLogin() {
+    window.location.href = 'https://www.konnect-360.com/app';
 }
 
 </script>
@@ -130,7 +49,7 @@ function redirectToScroll(value: PropItem) {
       <template #item="{ item }">
         <div
           class="flex space-x-2 px-3 py-2 items-center"
-          @click.prevent="redirectToScroll(item as PropItem)"
+          @click.prevent="toScrollRoute(item as PropItem)"
         >
           <UIcon
             :name="item.icon"
@@ -150,6 +69,7 @@ function redirectToScroll(value: PropItem) {
         color="primary"
         label="Inicia sesion"
         class="text-white"
+        @click="redirectToLogin"
       />
 
       <!-- theme -->

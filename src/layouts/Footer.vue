@@ -1,16 +1,21 @@
 <script setup lang="ts">
 import LogoSVG from "@assets/components/LogoSVG.vue";
+// composables
+import { useScrollComposable } from "@composables/useScrollComposable";
+import type { PropItem } from "@composables/useScrollComposable";
+
+const { toScrollRoute, items, toScrollTop } = useScrollComposable();
 
 const year = new Date().getFullYear();
 </script>
 
 <template>
   <footer class="bg-gray-800 text-gray-300 py-12">
-    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Logo y Sección de Derechos de Autor -->
       <div class="flex flex-col items-center md:items-start">
         <!-- Asumiendo que LogoSVG está en src/assets/components -->
-        <div class="overflow-hidden w-[30%] h-20">
+        <div class="overflow-hidden w-[40%] h-20">
           <LogoSVG class="w-full h-full scale-200" />
         </div>
         <p class="text-sm">
@@ -24,29 +29,47 @@ const year = new Date().getFullYear();
           Enlaces rápidos
         </h4>
         <ul>
-          <li class="mb-2">
+          <li
+            v-for="(item, index) of items[0]"
+            :key="index"
+            class="mb-2"
+          >
             <a
               href="#"
               class="hover:text-primary-300"
-            >Inicio</a>
+              @click.prevent="toScrollRoute(item as PropItem)"
+            >{{ item.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sección de Enlaces de Navegación -->
+      <div class="text-center md:text-left">
+        <h4 class="text-lg font-semibold mb-4 text-primary-300">
+          Datos y Privacidad
+        </h4>
+        <ul>
+          <li class="mb-2">
+            <ULink
+              to="/privacidad"
+              active-class="text-primary-300 underline"
+              inactive-class="text-white"
+              class="hover:text-primary-300"
+              @click="toScrollTop"
+            >
+              Politicas de privacidad
+            </ULink>
           </li>
           <li class="mb-2">
-            <a
-              href="#"
+            <ULink
+              to="/terminos"
               class="hover:text-primary-300"
-            >Sobre Nosotros</a>
-          </li>
-          <li class="mb-2">
-            <a
-              href="#"
-              class="hover:text-primary-300"
-            >Servicios</a>
-          </li>
-          <li class="mb-2">
-            <a
-              href="#"
-              class="hover:text-primary-300"
-            >Contacto</a>
+              active-class="text-primary-300 underline"
+              inactive-class="text-white"
+              @click="toScrollTop"
+            >
+              Términos de uso
+            </ULink>
           </li>
         </ul>
       </div>
@@ -72,7 +95,7 @@ const year = new Date().getFullYear();
           ><i class="fab fa-instagram" /></a>
         </div>
         <p class="mt-4 text-sm">
-          Calle Principal 123<br>Ciudad Cualquiera, CA 91234
+          Av.Mayor Andres Razuri N° 172<br>LIMA -SAN MIGUEL
         </p>
       </div>
     </div>
