@@ -10,10 +10,6 @@ export interface PropItem {
     to: string
 }
 
-function useScrollToTopRoute() {
-    const router = useRouter();
-
-}
 
 function useScrollComposable() {
     const router = useRouter();
