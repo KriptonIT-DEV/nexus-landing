@@ -14,7 +14,7 @@
             Introducción
           </h2>
           <p class="mb-4">
-            En <strong>KRIPTON INFORMATION TECHNOLOGY S.A.C</strong> y nuestros afiliados
+            En <strong>OPTIMUS INFORMATION TECH S.A.C.</strong> y nuestros afiliados
             estamos comprometidos a proteger tu privacidad. Esta Política de
             privacidad se aplica a la información y los datos personales
             recopilados por Konnect-360 cuando interactúas con nuestros
@@ -116,7 +116,8 @@
           </p>
           <p class="mb-4">
             Los datos personales tratados serán alojados en servidores
-            seguros. KRIPTON INFORMATION TECHNOLOGY S.A.C no tendrá acceso a
+            seguros. OPTIMUS INFORMATION TECH S.A.C.
+            no tendrá acceso a
             dicha información más allá de la necesaria para poder asegurar
             la ejecución de los servicios y el resto de las finalidades que
             aquí se detallan, así como asegurar la integridad,
@@ -539,7 +540,7 @@
               Para ejercer cualquiera de estos derechos: Ante Konnect-360,
               incluidos nuestros sitios web, productos y servicios, usa envía
               un correo a soporte@kriptonit.com.pe Para cuestiones relacionadas
-              con todas las marcas de KRIPTON INFORMATION TECHNOLOGY S.A.C
+              con todas las marcas de OPTIMUS INFORMATION TECH S.A.C.
               escríbenos por correo postal a AV.MAYOR ANDRES RAZURI NRO 172 -
               LIMA - LIMA - SAN MIGUEL, a la atención del delegado de
               protección de datos y privacidad.
@@ -606,7 +607,7 @@
             nuestras prácticas de protección de la privacidad, o si tienes
             alguna discapacidad y necesitas consultar este material en otro
             formato, haz lo siguiente: – Para cuestiones relacionadas con
-            KRIPTON INFORMATION TECHNOLOGY S.A.C, escríbenos a
+            OPTIMUS INFORMATION TECH S.A.C., escríbenos a
             soporte@kriptonit.com.pe También puedes comunicarte con nosotros
             por correo postal para cuestiones relacionadas con todas las
             marcas de Konnect-360 dirigiéndote a: AV.MAYOR ANDRES RAZURI NRO

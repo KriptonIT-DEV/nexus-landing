@@ -26,8 +26,8 @@
           </p>
           <p class="mb-4">
             El uso del Servicio de Konnect-360 podrá estar sujeto a términos y
-            condiciones adicionales si así lo establece KRIPTON INFORMATION
-            TECHNOLOGY S.A.C al incorporarlos a los presentes con su debida
+            condiciones adicionales si así lo establece OPTIMUS INFORMATION TECH S.A.C.
+            al incorporarlos a los presentes con su debida
             referencia.
           </p>
           <p class="mb-4">
@@ -130,7 +130,7 @@
           <p class="mb-4">
             El titular de la Suscripción y todos los servicios que la misma
             contiene y que son ofrecidas en la Plataforma Online son de
-            KRIPTON INFORMATION TECHNOLOGY S.A.C (en adelante "Konnect-360"),
+            OPTIMUS INFORMATION TECH S.A.C. (en adelante "Konnect-360"),
             con domicilio fiscal: AV.MAYOR ANDRES RAZURI NRO 172 - LIMA - LIMA
             - SAN MIGUEL. El Comprador que desee contactar con Konnect-360
             puede utilizar la dirección de correo postal anteriormente
