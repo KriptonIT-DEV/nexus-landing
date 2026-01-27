@@ -12,3 +12,5 @@ app.use(uiPlugin)
 app.use(router) // Usamos la instancia del router importada
 
 app.mount("#app")
+
+// Call checkDomain at app start

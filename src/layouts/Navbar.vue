@@ -1,36 +1,38 @@
 <script setup lang="ts">
-import { useColorMode } from '@vueuse/core'
-import { computed } from "vue";
+// import { useColorMode } from '@vueuse/core'
+import { ref, computed } from "vue";
 
 // assets
 import LogoSVG from "@assets/components/LogoSVG.vue";
 // composables
-import { useScrollComposable } from "@composables/useScrollComposable";
+import { useScrollComposable } from "@composables/useScrollComposable.ts";
 import type { PropItem } from "@composables/useScrollComposable";
 
-const mode = useColorMode()
+// const mode = useColorMode()
+const mode = ref("light");
+
 const themeCom = computed(() => {
-    const isDark = mode.value === 'dark';
-    const icon = isDark ? 'i-lucide-moon' : 'i-lucide-sun'
-    return {
-        icon,
-    }
+	const isDark = mode.value === "dark";
+	const icon = isDark ? "i-lucide-moon" : "i-lucide-sun";
+	return {
+		icon,
+	};
 });
+
 const { items, toScrollRoute } = useScrollComposable();
 
 function changeTheme(value: boolean) {
-    mode.value = value ? 'light' : 'dark'
+	mode.value = value ? "light" : "dark";
 }
 
 function redirectToLogin() {
-    window.open('https://crm.konnect-360.com/', '_blank');
+	window.open("https://crm.konnect-360.com/", "_blank");
 }
-
 </script>
 
 <template>
   <nav
-    class="w-full bg-default flex items-center space-x-10 border-x border-b rounded-b-2xl border-default shadow-lg px-5"
+    class="w-full bg-default flex items-center space-x-10 rounded-b-2xl px-5"
   >
     <!-- logo -->
     <div class="overflow-hidden w-[22%] h-20">
@@ -52,7 +54,7 @@ function redirectToLogin() {
           @click.prevent="toScrollRoute(item as PropItem)"
         >
           <UIcon
-            :name="item.icon"
+            :name="item.icon || ''"
             class="size-5"
           />
           <span>

@@ -3,6 +3,7 @@
 @plugin '@midudev/tailwind-animations';
 
 @theme static {
+
     --color-blue-50: oklch(90.98% 0.04338 166.72);
     --color-blue-100: oklch(88.46% 0.05417 166.29);
     --color-blue-200: oklch(83.957% 0.07763 165.13);
@@ -24,6 +25,10 @@
     --color-green-700: oklch(0.48 0.28 279.54);
     --color-green-800: oklch(0.34 0.2 280.03);
     --color-green-900: oklch(0.2 0.12 281.71);
+}
+
+:root {
+  --ui-radius: 0.5rem;
 }
 
 @layer base {

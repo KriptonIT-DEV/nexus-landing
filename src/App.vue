@@ -1,30 +1,50 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'; // Import ref, onMounted, onBeforeUnmount, computed
+import { ref, onMounted, onBeforeUnmount } from "vue"; // Import ref, onMounted, onBeforeUnmount, computed
 import Navbar from "@layouts/Navbar.vue";
 import Footer from "@layouts/Footer.vue";
+import { useApi } from "./boot/axios";
+import { getParseDomain } from "./utils/helpers/index";
 
 const showScrollButton = ref(false); // Reactive variable to track scroll position indirectly
+const domain = getParseDomain();
+const params = new URLSearchParams({ domain });
+const { data, execute } = useApi("/check-domain-tennant");
 
 const handleScroll = () => {
-    showScrollButton.value = window.scrollY > 350;
+	showScrollButton.value = window.scrollY > 350;
 };
 
 const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Smooth scrolling animation
-    });
+	window.scrollTo({
+		top: 0,
+		behavior: "smooth", // Smooth scrolling animation
+	});
 };
 
+const newdomain = import.meta.env.VITE_URL_REDIRECT_APP_TENNANT.replace(
+	"{domain}",
+	domain,
+);
+
+if (!["www", "localhost"].includes(domain)) {
+	window.location.href = newdomain;
+}
+
 onMounted(() => {
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Call once to set initial state
+	window.addEventListener("scroll", handleScroll);
+	handleScroll(); // Call once to set initial state
+	// Ejecutar la solicitud y loguear la respuesta
+
+/* 	execute({
+		params: {
+			domain,
+		},
+	}).then(() => {}); */
 });
 
 onBeforeUnmount(() => {
-    window.removeEventListener('scroll', handleScroll);
+	window.removeEventListener("scroll", handleScroll);
 });
-
 </script>
 
 <template>

@@ -1,9 +1,7 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
-
-import { fileURLToPath, URL } from 'node:url'
-
-import ui from "@nuxt/ui/vite"
+import ui from "@nuxt/ui/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -21,6 +19,7 @@ export default defineConfig({
     resolve: {
         alias: {
           '@': fileURLToPath(new URL('./src', import.meta.url)),
+          '@boot': fileURLToPath(new URL('./src/boot', import.meta.url)),
           '@composables': fileURLToPath(new URL('./src/composables', import.meta.url)),
           '@utils': fileURLToPath(new URL('./src/utils', import.meta.url)),
           '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
