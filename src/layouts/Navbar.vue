@@ -26,7 +26,7 @@ function changeTheme(value: boolean) {
 }
 
 function redirectToLogin() {
-	window.open("https://crm.konnect-360.com/", "_blank");
+	window.open(import.meta.env.VITE_URL_STATIC_APP_TENNANT, "_blank");
 }
 </script>
 
