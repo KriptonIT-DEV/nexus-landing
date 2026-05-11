@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Type check
+        run: bun run typecheck
+
+      - name: Build
+        run: bun run build
+        env:
+          PUBLIC_API_BASE_URL: ${{ secrets.PUBLIC_API_BASE_URL }}
+          PUBLIC_URL_REDIRECT_APP_TENNANT: ${{ secrets.PUBLIC_URL_REDIRECT_APP_TENNANT }}
+          PUBLIC_URL_STATIC_APP_TENNANT: ${{ secrets.PUBLIC_URL_STATIC_APP_TENNANT }}
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ secrets.APP_PATH }}
+            git pull origin main
+            bun install --frozen-lockfile
+            PUBLIC_API_BASE_URL=${{ secrets.PUBLIC_API_BASE_URL }} \
+            PUBLIC_URL_REDIRECT_APP_TENNANT=${{ secrets.PUBLIC_URL_REDIRECT_APP_TENNANT }} \
+            PUBLIC_URL_STATIC_APP_TENNANT=${{ secrets.PUBLIC_URL_STATIC_APP_TENNANT }} \
+            bun run build

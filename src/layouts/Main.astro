@@ -15,6 +15,9 @@ const {
   title = `${site.name} | CRM Omnicanal`,
   description = site.description,
 } = Astro.props
+
+const tenantRedirectUrl =
+  import.meta.env.PUBLIC_URL_REDIRECT_APP_TENNANT ?? ""
 ---
 
 <!doctype html>
@@ -30,6 +33,16 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <ClientRouter fallback="swap" />
+    <script is:inline define:vars={{ tenantRedirectUrl }}>
+      ;(function () {
+        if (!tenantRedirectUrl) return
+        var hostname = window.location.hostname
+        var sub = hostname.split(".")[0]
+        if (sub.includes("-")) sub = sub.split("-")[0]
+        if (!sub || ["www", "localhost"].includes(sub)) return
+        window.location.href = tenantRedirectUrl.replace("{domain}", sub)
+      })()
+    </script>
     <script is:inline>
       ;(function () {
         var stored = localStorage.getItem("colorTheme")
