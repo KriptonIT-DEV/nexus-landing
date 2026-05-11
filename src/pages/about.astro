@@ -1,0 +1,231 @@
+---
+import Main from "@/layouts/Main.astro"
+import Container from "@/components/layout/Container.astro"
+import { Badge } from "@/components/ui/badge"
+import { buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { Icon } from "@/components/Icon"
+import { ArrowRight } from "lucide-react"
+import {
+  aboutHero,
+  aboutMission,
+  aboutVision,
+  whyChoose,
+  values,
+  timeline,
+  aboutCta,
+} from "@/content/about"
+---
+
+<Main title="Sobre Nosotros | Konnect 360">
+  {/* Hero */}
+  <section class="border-b border-border bg-secondary/30">
+    <Container size="narrow" class="py-16 text-center md:py-24">
+      <Badge variant="outline" className="mb-6 font-mono text-xs uppercase tracking-[0.2em]">
+        {aboutHero.badge}
+      </Badge>
+      <h1 class="mx-auto max-w-3xl font-display text-5xl leading-[0.95] text-primary md:text-7xl">
+        {aboutHero.title}
+      </h1>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+        {aboutHero.description}
+      </p>
+      <a
+        href={aboutHero.cta.href}
+        class={buttonVariants({ size: "lg", className: "mt-8" })}
+      >
+        {aboutHero.cta.label}
+        <ArrowRight />
+      </a>
+    </Container>
+  </section>
+
+  <Container size="default" class="py-12 md:py-16">
+    <div class="flex flex-col gap-12 md:gap-16">
+      {/* Mission + Vision */}
+      <section class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {
+          [aboutMission, aboutVision].map((item) => (
+            <Card>
+              <CardHeader>
+                <div class="mb-3 flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Icon name={item.icon} size={22} strokeWidth={1.75} />
+                </div>
+                <CardTitle className="font-display text-3xl text-primary">
+                  {item.title}
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  {item.paragraphs[0]}
+                </CardDescription>
+              </CardHeader>
+              {item.paragraphs.length > 1 && (
+                <CardContent>
+                  {item.paragraphs.slice(1).map((p) => (
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      {p}
+                    </p>
+                  ))}
+                </CardContent>
+              )}
+            </Card>
+          ))
+        }
+      </section>
+
+      {/* Why choose us — editorial list with separators */}
+      <section class="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
+        <header class="flex flex-col gap-3 md:col-span-4">
+          <Badge variant="outline" className="w-fit font-mono text-xs uppercase tracking-[0.2em]">
+            {whyChoose.badge}
+          </Badge>
+          <h2 class="font-display text-3xl leading-tight md:text-4xl">
+            {whyChoose.title}
+          </h2>
+          <p class="text-sm leading-relaxed text-muted-foreground">
+            {whyChoose.subtitle}
+          </p>
+        </header>
+
+        <ul class="md:col-span-8">
+          {
+            whyChoose.items.map((item, i) => (
+              <>
+                {i > 0 && <Separator />}
+                <li class="flex items-start gap-5 py-5">
+                  <span class="font-mono text-xs tracking-[0.2em] text-muted-foreground/60 pt-1">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon name={item.icon} size={20} strokeWidth={1.75} />
+                  </span>
+                  <div class="flex flex-col gap-1">
+                    <p class="font-display text-lg leading-tight">
+                      {item.title}
+                    </p>
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </li>
+              </>
+            ))
+          }
+        </ul>
+      </section>
+
+      {/* Values */}
+      <section class="flex flex-col gap-6">
+        <header class="flex flex-col gap-2">
+          <Badge variant="outline" className="w-fit font-mono text-xs uppercase tracking-[0.2em]">
+            {values.badge}
+          </Badge>
+          <h2 class="font-display text-3xl leading-tight md:text-4xl">
+            {values.title}
+          </h2>
+          <p class="text-sm text-muted-foreground">{values.subtitle}</p>
+        </header>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {
+            values.items.map((item) => (
+              <Card className="transition-colors hover:border-primary/30">
+                <CardContent className="flex items-start gap-4 p-6">
+                  <span class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon name={item.icon} size={22} strokeWidth={1.75} />
+                  </span>
+                  <div>
+                    <p class="font-display text-lg">{item.title}</p>
+                    <p class="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))
+          }
+        </div>
+      </section>
+
+      {/* Timeline — editorial vertical with prominent year markers */}
+      <section class="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
+        <header class="flex flex-col gap-3 md:col-span-4">
+          <Badge variant="outline" className="w-fit font-mono text-xs uppercase tracking-[0.2em]">
+            {timeline.badge}
+          </Badge>
+          <h2 class="font-display text-3xl leading-tight md:text-4xl">
+            {timeline.title}
+          </h2>
+          <p class="text-sm leading-relaxed text-muted-foreground">
+            {timeline.subtitle}
+          </p>
+        </header>
+
+        <ol class="md:col-span-8">
+          {
+            timeline.items.map((item, i) => (
+              <li class="grid grid-cols-[auto_1fr_auto] items-start gap-x-6 py-6 first:pt-0 last:pb-0 [&:not(:last-child)]:border-b [&:not(:last-child)]:border-border">
+                <p class="font-display text-4xl leading-none text-primary md:text-5xl">
+                  {item.year}
+                </p>
+                <div class="flex flex-col gap-1">
+                  <p class="font-display text-xl leading-tight">
+                    {item.title}
+                  </p>
+                  <p class="max-w-prose text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+                <span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Icon name={item.icon} size={18} strokeWidth={1.75} />
+                </span>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      {/* CTA */}
+      <Card className="relative overflow-hidden border-0 bg-primary text-primary-foreground">
+        <div
+          class="absolute -right-16 -top-16 size-64 rounded-full bg-primary-foreground/10"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="absolute -bottom-12 -left-12 size-48 rounded-full bg-primary-foreground/10"
+          aria-hidden="true"
+        >
+        </div>
+        <CardContent className="relative z-10 flex flex-col items-center justify-between gap-6 px-8 py-12 md:flex-row md:px-12">
+          <div class="text-center md:text-left">
+            <p class="font-display text-3xl leading-tight md:text-4xl">
+              {aboutCta.title}
+            </p>
+            <p class="mt-2 text-sm text-primary-foreground/80">
+              {aboutCta.description}
+            </p>
+          </div>
+          <a
+            href={aboutCta.button.href}
+            class={buttonVariants({
+              size: "lg",
+              variant: "ghost",
+              className:
+                "shrink-0 border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary",
+            })}
+          >
+            {aboutCta.button.label}
+            <ArrowRight />
+          </a>
+        </CardContent>
+      </Card>
+    </div>
+  </Container>
+</Main>

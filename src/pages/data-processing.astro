@@ -1,0 +1,205 @@
+---
+import Legal from "@/layouts/Legal.astro"
+
+const sections = [
+  { id: "intro", label: "Introducción" },
+  { id: "controller", label: "Responsable del tratamiento" },
+  { id: "purpose", label: "Finalidad del tratamiento" },
+  { id: "categories", label: "Categorías de datos" },
+  { id: "legal-basis", label: "Base legal" },
+  { id: "retention", label: "Período de retención" },
+  { id: "rights", label: "Derechos de los titulares" },
+  { id: "security", label: "Medidas de seguridad" },
+  { id: "transfers", label: "Transferencias internacionales" },
+  { id: "changes", label: "Modificaciones" },
+  { id: "contact", label: "Información de contacto" },
+]
+---
+
+<Legal
+  title="Política de Tratamiento de Datos"
+  description="Principios y procedimientos que Konnect 360 sigue para el tratamiento de datos personales, en cumplimiento con las leyes de protección de datos vigentes."
+  updatedAt="Enero 2024"
+  sections={sections}
+  cta={{
+    title: "¿Dudas sobre el tratamiento de tus datos?",
+    description: "Escríbenos a ventas@konnect-360.com o contáctanos directamente.",
+  }}
+>
+  <section id="intro">
+    <h2>1. Introducción</h2>
+    <p>
+      Esta Política de Tratamiento de Datos establece los principios y procedimientos que Konnect 360 (Optimus Tech) sigue para el tratamiento de datos personales, en cumplimiento con las leyes de protección de datos vigentes. Nuestro compromiso es garantizar la privacidad y seguridad de la información que nos confían usuarios y clientes.
+    </p>
+  </section>
+
+  <section id="controller">
+    <h2>2. Responsable del tratamiento</h2>
+    <p>El responsable del tratamiento de los datos personales es:</p>
+    <ul>
+      <li><strong>Nombre de la entidad:</strong> Optimus Tech (Konnect 360)</li>
+      <li><strong>Dirección:</strong> Av. Mayor Andres Razuri N° 172, San Miguel, Lima, Perú</li>
+      <li><strong>Correo electrónico:</strong> <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a></li>
+      <li><strong>Delegado de Protección de Datos:</strong> <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a></li>
+    </ul>
+  </section>
+
+  <section id="purpose">
+    <h2>3. Finalidad del tratamiento</h2>
+    <p>Los datos recopilados se tratan con las siguientes finalidades:</p>
+    <h3>Finalidades principales</h3>
+    <ul>
+      <li>Prestar servicios de CRM omnicanal y atención al cliente.</li>
+      <li>Gestionar solicitudes, consultas y tickets de soporte.</li>
+      <li>Procesar transacciones y pagos de suscripción.</li>
+      <li>Enviar comunicaciones relacionadas con el servicio.</li>
+      <li>Mejorar la calidad de nuestros servicios y plataforma.</li>
+    </ul>
+    <h3>Finalidades secundarias</h3>
+    <ul>
+      <li>Analizar tendencias y patrones de uso de la plataforma.</li>
+      <li>Personalizar la experiencia del usuario.</li>
+      <li>Realizar estudios de mercado y mejoras de producto.</li>
+      <li>Prevenir fraudes y actividades no autorizadas.</li>
+      <li>Cumplir con obligaciones legales y regulatorias.</li>
+    </ul>
+  </section>
+
+  <section id="categories">
+    <h2>4. Categorías de datos recopilados</h2>
+    <p>Recopilamos las siguientes categorías de datos personales:</p>
+    <h3>Datos de identificación</h3>
+    <ul>
+      <li>Nombre completo y apellidos.</li>
+      <li>Cargo en la empresa.</li>
+      <li>Razón social de la empresa.</li>
+      <li>Firma digital.</li>
+    </ul>
+    <h3>Datos de contacto</h3>
+    <ul>
+      <li>Correo electrónico corporativo.</li>
+      <li>Número de teléfono o celular.</li>
+      <li>Dirección del sitio web de la empresa.</li>
+      <li>Cuentas en redes sociales corporativas.</li>
+    </ul>
+    <h3>Datos de transacciones</h3>
+    <ul>
+      <li>Historial de suscripciones contratadas.</li>
+      <li>Información de pagos (procesada por Stripe).</li>
+      <li>Facturas y comprobantes.</li>
+    </ul>
+    <h3>Datos de comunicaciones</h3>
+    <ul>
+      <li>Historial de consultas y tickets de soporte.</li>
+      <li>Conversaciones con agentes (IA y humanos) en la plataforma.</li>
+      <li>Mensajes intercambiados por WhatsApp, Instagram, Messenger.</li>
+      <li>Correos electrónicos intercambiados con el equipo.</li>
+    </ul>
+  </section>
+
+  <section id="legal-basis">
+    <h2>5. Base legal del tratamiento</h2>
+    <p>El tratamiento de sus datos se basa en:</p>
+    <ul>
+      <li><strong>Consentimiento:</strong> cuando nos lo otorgó explícitamente al registrarse o aceptar términos.</li>
+      <li><strong>Contrato:</strong> para cumplir obligaciones derivadas de la suscripción.</li>
+      <li><strong>Interés legítimo:</strong> para fines como la mejora del servicio, sin anular sus derechos.</li>
+      <li><strong>Obligación legal:</strong> para cumplir leyes y regulaciones aplicables en Perú y Latinoamérica.</li>
+    </ul>
+  </section>
+
+  <section id="retention">
+    <h2>6. Período de retención</h2>
+    <p>Los datos se conservarán el tiempo necesario para cumplir las finalidades:</p>
+    <h3>Períodos específicos</h3>
+    <ul>
+      <li><strong>Datos de clientes activos:</strong> mientras exista relación comercial.</li>
+      <li><strong>Datos de transacciones:</strong> 7 años (cumplimiento fiscal).</li>
+      <li><strong>Datos de soporte:</strong> 3 años desde la última interacción.</li>
+      <li><strong>Datos de marketing:</strong> 2 años desde el último consentimiento.</li>
+    </ul>
+    <h3>Criterios de eliminación</h3>
+    <p>Los datos se eliminarán cuando:</p>
+    <ul>
+      <li>Se cumpla el período de retención establecido.</li>
+      <li>El usuario solicite su eliminación (cuando sea legalmente posible).</li>
+      <li>Ya no sean necesarios para los fines del tratamiento.</li>
+      <li>Se cumpla una obligación legal de eliminación.</li>
+    </ul>
+  </section>
+
+  <section id="rights">
+    <h2>7. Derechos de los titulares</h2>
+    <p>Como titular de sus datos, usted tiene los siguientes derechos:</p>
+    <h3>Acceso</h3>
+    <p>Solicitar y obtener información sobre si sus datos están siendo tratados, así como acceder a ellos en formato legible.</p>
+    <h3>Rectificación</h3>
+    <p>Solicitar la corrección de datos inexactos o incompletos.</p>
+    <h3>Supresión</h3>
+    <p>Solicitar la eliminación de sus datos cuando ya no sean necesarios o retire su consentimiento.</p>
+    <h3>Portabilidad</h3>
+    <p>Recibir sus datos en un formato estructurado y transmitirlos a otro responsable.</p>
+    <h3>Oposición</h3>
+    <p>Oponerse al tratamiento, especialmente para fines de marketing.</p>
+    <h3>Revocación del consentimiento</h3>
+    <p>Retirar su consentimiento en cualquier momento, sin afectar la licitud previa.</p>
+    <p>Para ejercer cualquiera de estos derechos, envíe su solicitud a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>. Responderemos en un plazo máximo de 30 días naturales.</p>
+  </section>
+
+  <section id="security">
+    <h2>8. Medidas de seguridad</h2>
+    <p>Implementamos medidas técnicas y organizativas apropiadas:</p>
+    <h3>Medidas técnicas</h3>
+    <ul>
+      <li>Cifrado en tránsito (TLS/SSL).</li>
+      <li>Cifrado en reposo (AES-256).</li>
+      <li>Autenticación multifactor (MFA).</li>
+      <li>Firewalls y sistemas de detección de intrusiones.</li>
+      <li>Actualizaciones regulares de software.</li>
+      <li>Copias de seguridad automatizadas.</li>
+    </ul>
+    <h3>Medidas organizativas</h3>
+    <ul>
+      <li>Políticas de acceso y control de usuarios.</li>
+      <li>Capacitación regular del personal.</li>
+      <li>Contratos de confidencialidad con empleados y proveedores.</li>
+      <li>Auditorías de seguridad periódicas.</li>
+      <li>Plan de respuesta a incidentes.</li>
+    </ul>
+  </section>
+
+  <section id="transfers">
+    <h2>9. Transferencias internacionales</h2>
+    <p>Los datos pueden ser transferidos a servidores fuera del país únicamente cuando:</p>
+    <ul>
+      <li>El país de destino cuente con un nivel de protección adecuado.</li>
+      <li>Se hayan implementado garantías mediante cláusulas contractuales tipo.</li>
+      <li>El titular haya dado consentimiento explícito.</li>
+      <li>La transferencia sea necesaria para la ejecución del contrato.</li>
+      <li>La transferencia sea requerida por obligación legal.</li>
+    </ul>
+    <p>Nuestros proveedores (como Stripe) cuentan con certificaciones internacionales (PCI DSS, SOC 2).</p>
+  </section>
+
+  <section id="changes">
+    <h2>10. Modificaciones a esta política</h2>
+    <p>Nos reservamos el derecho de modificar esta política. Cualquier cambio será comunicado mediante:</p>
+    <ul>
+      <li>Publicación actualizada en nuestro sitio web.</li>
+      <li>Envío de correo electrónico a usuarios registrados.</li>
+      <li>Notificación en la plataforma Konnect 360.</li>
+    </ul>
+    <p>El uso continuado de los servicios después de la publicación constituirá aceptación de la política actualizada.</p>
+  </section>
+
+  <section id="contact">
+    <h2>11. Información de contacto</h2>
+    <p>Para ejercer sus derechos o realizar consultas:</p>
+    <ul>
+      <li><strong>Correo electrónico:</strong> <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a></li>
+      <li><strong>Dirección:</strong> Av. Mayor Andres Razuri N° 172, San Miguel, Lima, Perú</li>
+      <li><strong>Formulario:</strong> <a href="/contact">Contacto en línea</a></li>
+    </ul>
+    <p>Responderemos su solicitud en un plazo máximo de 30 días naturales.</p>
+  </section>
+</Legal>

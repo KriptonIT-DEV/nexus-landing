@@ -1,0 +1,22 @@
+---
+import Main from "@/layouts/Main.astro"
+import Container from "@/components/layout/Container.astro"
+import { ContactForm } from "@/components/forms/ContactForm"
+import { contactHero } from "@/content/contact"
+---
+
+<Main title="Contacto | Konnect 360">
+  <Container size="narrow" class="py-14 md:py-20">
+    <header class="flex flex-col items-center gap-3 text-center">
+      <h1 class="font-display text-5xl leading-tight md:text-6xl">
+        {contactHero.title}
+      </h1>
+      <p class="max-w-md text-base text-muted-foreground">
+        {contactHero.description}
+      </p>
+    </header>
+    <div class="mt-12">
+      <ContactForm client:load />
+    </div>
+  </Container>
+</Main>

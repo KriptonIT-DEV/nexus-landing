@@ -1,0 +1,39 @@
+---
+type Size = "narrow" | "default" | "wide" | "full"
+
+interface Props {
+  /**
+   * Maximum width of the container.
+   * - `narrow` (max-w-3xl, 768px): forms, focused single-column content
+   * - `default` (max-w-5xl, 1024px): editorial pages, prose
+   * - `wide` (max-w-7xl, 1280px): landing surfaces, bento, marketing
+   * - `full` (max-w-none): edge-to-edge with only padding
+   */
+  size?: Size
+  /** Tag rendered as wrapper. Defaults to `div`. */
+  as?: keyof HTMLElementTagNameMap
+  class?: string
+}
+
+const sizes: Record<Size, string> = {
+  narrow: "max-w-3xl",
+  default: "max-w-5xl xl:max-w-6xl",
+  wide: "max-w-7xl 2xl:max-w-[88rem]",
+  full: "max-w-none",
+}
+
+const props = Astro.props
+const size: Size = props.size ?? "wide"
+const Tag = props.as ?? "div"
+const extraClass = props.class
+---
+
+<Tag
+  class:list={[
+    "mx-auto w-full px-5 sm:px-6 lg:px-8 2xl:px-12",
+    sizes[size],
+    extraClass,
+  ]}
+>
+  <slot />
+</Tag>

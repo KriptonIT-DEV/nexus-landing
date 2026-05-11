@@ -1,0 +1,399 @@
+---
+import { Image } from "astro:assets"
+import Main from "@/layouts/Main.astro"
+import Container from "@/components/layout/Container.astro"
+import { Badge } from "@/components/ui/badge"
+import { buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { Icon } from "@/components/Icon"
+import { ArrowRight, ArrowDown, Globe } from "lucide-react"
+import bannerMain from "@/assets/images/banner-main.png"
+import laptop from "@/assets/images/image-laptop.png"
+import productImg from "@/assets/images/image_product.png"
+import instagramIcon from "@/assets/icons/instagram.svg"
+import whatsappIcon from "@/assets/icons/whatsapp.svg"
+import {
+  hero,
+  whyUs,
+  stats,
+  services,
+  missionVision,
+  homeCta,
+} from "@/content/home"
+---
+
+<Main>
+  {/* Hero */}
+  <section
+    id="start"
+    class="relative h-svh min-h-[640px] overflow-hidden"
+    aria-label="Hero"
+  >
+    <Image
+      src={bannerMain}
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-tr from-foreground/90 via-foreground/60 to-foreground/30"
+      aria-hidden="true"
+    >
+    </div>
+
+    <Container class="relative z-10 flex h-full items-center">
+      <div class="flex max-w-2xl flex-col gap-7 animate-rise xl:max-w-3xl">
+        <Badge
+          variant="outline"
+          className="w-fit border-background/40 bg-transparent font-mono text-xs tracking-wide text-background"
+        >
+          {hero.badge}
+        </Badge>
+
+        <h1 class="font-display text-5xl leading-[0.95] text-background sm:text-6xl md:text-7xl">
+          {hero.title.pre}
+          <span class="text-primary-foreground underline decoration-primary decoration-[6px] underline-offset-[10px]">
+            {hero.title.accent}
+          </span>
+          {hero.title.post}<br />
+          {hero.title.suffix}
+        </h1>
+
+        <p class="max-w-md text-lg leading-relaxed text-background/85">
+          {hero.description}
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a
+            href={hero.ctas.primary.href}
+            class={buttonVariants({ size: "lg" })}
+          >
+            {hero.ctas.primary.label}
+            <ArrowRight />
+          </a>
+          <a
+            href={hero.ctas.secondary.href}
+            class={buttonVariants({
+              size: "lg",
+              variant: "ghost",
+              className:
+                "border border-background/40 text-background hover:bg-background hover:text-foreground",
+            })}
+          >
+            {hero.ctas.secondary.label}
+          </a>
+        </div>
+
+        <div class="flex flex-col gap-3 pt-2">
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-background/60">
+            {hero.socialLabel}
+          </p>
+          <div class="flex gap-2">
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              class="group flex size-10 items-center justify-center rounded-md border border-background/30 text-background transition-colors hover:border-primary hover:bg-primary"
+            >
+              <Image
+                src={whatsappIcon}
+                alt=""
+                class="size-[18px] brightness-0 invert"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="group flex size-10 items-center justify-center rounded-md border border-background/30 text-background transition-colors hover:border-primary hover:bg-primary"
+            >
+              <Image
+                src={instagramIcon}
+                alt=""
+                class="size-[18px] brightness-0 invert"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="#"
+              aria-label="Sitio web"
+              class="flex size-10 items-center justify-center rounded-md border border-background/30 text-background transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              <Globe size={18} strokeWidth={1.75} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+
+    <a
+      href="#why-us"
+      aria-label="Continuar"
+      class="absolute inset-x-0 bottom-8 z-10 mx-auto flex w-fit items-center justify-center text-background/70 transition-colors hover:text-background"
+    >
+      <ArrowDown size={28} strokeWidth={1.5} className="animate-bounce" />
+    </a>
+  </section>
+
+  {/* Bento */}
+  <Container class="py-12 md:py-16">
+    <div class="flex flex-col gap-4">
+      {/* Why us */}
+      <section
+        id="why-us"
+        class="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5"
+      >
+        <Card className="md:col-span-7 flex flex-col justify-between gap-6">
+          <CardHeader className="gap-3">
+            <Badge variant="outline" className="w-fit font-mono text-xs uppercase tracking-[0.2em]">
+              {whyUs.badge}
+            </Badge>
+            <CardTitle className="font-display text-4xl leading-tight md:text-5xl">
+              {whyUs.title}
+            </CardTitle>
+            <CardDescription className="text-base leading-relaxed">
+              {whyUs.description}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-5">
+            <ul class="flex flex-col gap-3">
+              {
+                whyUs.bullets.map((bullet, i) => (
+                  <li class="flex items-start gap-3">
+                    <span class="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-md bg-primary/10 font-mono text-xs font-medium text-primary">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p class="text-sm text-muted-foreground">{bullet}</p>
+                  </li>
+                ))
+              }
+            </ul>
+            <Separator />
+            <p class="font-display text-base italic leading-relaxed text-foreground/70">
+              "{whyUs.quote}"
+            </p>
+          </CardContent>
+        </Card>
+
+        <div class="relative flex min-h-[320px] items-center justify-center overflow-hidden rounded-xl bg-secondary p-8 md:col-span-5">
+          <div
+            class="absolute inset-x-0 -top-16 h-48 rounded-full bg-primary/15 blur-3xl"
+            aria-hidden="true"
+          >
+          </div>
+          <Image
+            src={laptop}
+            alt="Konnect 360 plataforma"
+            class="relative z-10 w-full max-w-md drop-shadow-2xl"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      {/* Stats — single editorial bento tile, asymmetric typography */}
+      <Card className="overflow-hidden border-primary/20 bg-primary/[0.04]">
+        <CardContent className="flex flex-col gap-0 p-0 md:flex-row md:items-stretch">
+          {
+            stats.map((stat, i) => (
+              <div
+                class:list={[
+                  "flex flex-1 items-baseline gap-4 px-6 py-6 md:px-8 md:py-7",
+                  i > 0 && "border-t border-primary/10 md:border-t-0 md:border-l",
+                ]}
+              >
+                <span class="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div class="flex flex-1 flex-col">
+                  <span class="font-display text-3xl leading-none text-primary md:text-4xl">
+                    {stat.value}
+                  </span>
+                  <span class="mt-2 text-xs leading-relaxed text-muted-foreground">
+                    {stat.label}
+                  </span>
+                </div>
+              </div>
+            ))
+          }
+        </CardContent>
+      </Card>
+
+      {/* Services */}
+      <section
+        id="services"
+        class="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5"
+      >
+        <div class="flex items-end justify-between gap-4 md:col-span-12">
+          <div class="flex flex-col gap-2">
+            <Badge variant="outline" className="w-fit font-mono text-xs uppercase tracking-[0.2em]">
+              {services.badge}
+            </Badge>
+            <h2 class="font-display text-3xl leading-tight md:text-4xl">
+              {services.title}
+            </h2>
+            <p class="text-sm text-muted-foreground">{services.subtitle}</p>
+          </div>
+          <a
+            href="/contact"
+            class={buttonVariants({
+              variant: "ghost",
+              size: "sm",
+              className: "hidden gap-1.5 md:inline-flex",
+            })}
+          >
+            Ver más
+            <ArrowRight />
+          </a>
+        </div>
+
+        {
+          services.items.slice(0, 2).map((item) => (
+            <Card className="md:col-span-6 transition-colors hover:border-primary/30">
+              <CardContent className="flex items-start gap-4 p-7">
+                <span class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Icon name={item.icon} size={24} strokeWidth={1.75} />
+                </span>
+                <div class="flex flex-col gap-1.5">
+                  <p class="font-display text-xl">{item.title}</p>
+                  <p class="text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        }
+
+        {
+          services.items.slice(2).map((item) => (
+            <Card className="md:col-span-4 transition-colors hover:border-primary/30">
+              <CardContent className="flex items-start gap-4 p-6">
+                <span class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Icon name={item.icon} size={22} strokeWidth={1.75} />
+                </span>
+                <div class="flex flex-col gap-1">
+                  <p class="font-display text-lg">{item.title}</p>
+                  <p class="text-xs leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        }
+
+        <Card className="md:col-span-4 relative flex min-h-[180px] items-center justify-center overflow-hidden border-primary/20 bg-primary/[0.04]">
+          <div
+            class="absolute -right-10 -top-10 size-32 rounded-full bg-primary/10"
+            aria-hidden="true"
+          >
+          </div>
+          <div
+            class="absolute -bottom-8 -left-8 size-24 rounded-full bg-primary/10"
+            aria-hidden="true"
+          >
+          </div>
+          <Image
+            src={productImg}
+            alt="Producto Konnect 360"
+            class="relative z-10 w-3/4 max-w-[260px] drop-shadow-xl"
+            loading="lazy"
+          />
+          <div class="absolute left-3 top-3 z-20 flex flex-col gap-2">
+            <div class="rounded-lg border border-border bg-card px-3 py-1.5 shadow-sm">
+              <p class="font-display text-base leading-none text-primary">
+                {services.showcase.metric1.value}
+              </p>
+              <p class="mt-1 text-xs text-muted-foreground">
+                {services.showcase.metric1.label}
+              </p>
+            </div>
+            <div class="rounded-lg bg-primary px-3 py-1.5 text-primary-foreground shadow-sm">
+              <p class="font-display text-base leading-none">
+                {services.showcase.metric2.value}
+              </p>
+              <p class="mt-1 text-xs text-primary-foreground/80">
+                {services.showcase.metric2.label}
+              </p>
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      {/* CTA */}
+      <Card className="relative overflow-hidden border-0 bg-primary text-primary-foreground">
+        <div
+          class="absolute -right-16 -top-16 size-64 rounded-full bg-primary-foreground/10"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="absolute -bottom-12 -left-12 size-48 rounded-full bg-primary-foreground/10"
+          aria-hidden="true"
+        >
+        </div>
+        <CardContent className="relative z-10 flex flex-col items-center justify-between gap-6 px-8 py-12 md:flex-row md:px-12">
+          <div class="text-center md:text-left">
+            <p class="font-display text-3xl leading-tight md:text-4xl">
+              {homeCta.title}
+            </p>
+            <p class="mt-2 text-sm text-primary-foreground/80">
+              {homeCta.description}
+            </p>
+          </div>
+          <a
+            href={homeCta.button.href}
+            class={buttonVariants({
+              size: "lg",
+              variant: "ghost",
+              className:
+                "shrink-0 border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary",
+            })}
+          >
+            {homeCta.button.label}
+            <ArrowRight />
+          </a>
+        </CardContent>
+      </Card>
+
+      {/* Mission / Vision */}
+      <section class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
+        {
+          missionVision.map((item) => (
+            <Card>
+              <CardContent className="flex flex-col gap-5 p-7">
+                <div class="flex items-center gap-3">
+                  <span class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon name={item.icon} size={20} strokeWidth={1.75} />
+                  </span>
+                  <h3 class="font-display text-2xl text-primary">
+                    {item.label}
+                  </h3>
+                </div>
+                <p class="text-sm leading-relaxed text-muted-foreground">
+                  {item.body}
+                </p>
+                <Separator />
+                <div class="flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <Badge variant="secondary" className="font-mono text-xs uppercase tracking-wider">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </section>
+
+    </div>
+  </Container>
+</Main>

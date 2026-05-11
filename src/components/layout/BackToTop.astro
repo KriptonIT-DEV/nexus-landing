@@ -1,0 +1,43 @@
+---
+import { ArrowUp } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
+---
+
+<button
+  id="back-to-top-fab"
+  type="button"
+  aria-label="Volver arriba"
+  data-visible="false"
+  class={buttonVariants({
+    size: "icon",
+    className:
+      "fixed right-5 bottom-5 z-40 size-11 rounded-full shadow-lg transition-all duration-300 ease-out data-[visible=false]:pointer-events-none data-[visible=false]:translate-y-3 data-[visible=false]:opacity-0",
+  })}
+>
+  <ArrowUp />
+</button>
+
+<script>
+  function initBackToTopFab() {
+    const fab = document.getElementById("back-to-top-fab")
+    if (!fab) return
+    const target = fab
+
+    const threshold = 320
+
+    function update() {
+      const visible = window.scrollY > threshold
+      target.dataset.visible = visible ? "true" : "false"
+    }
+
+    target.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    })
+
+    window.addEventListener("scroll", update, { passive: true })
+    update()
+  }
+
+  initBackToTopFab()
+  document.addEventListener("astro:after-swap", initBackToTopFab)
+</script>

@@ -1,0 +1,192 @@
+---
+import Legal from "@/layouts/Legal.astro"
+
+const sections = [
+  { id: "intro", label: "Introducción" },
+  { id: "updates", label: "Actualizaciones y contacto" },
+  { id: "data-collected", label: "Información que recopilamos" },
+  { id: "how-we-process", label: "Cómo tratamos los datos" },
+  { id: "how-we-share", label: "Cómo compartimos datos" },
+  { id: "image-rights", label: "Derechos de imagen" },
+  { id: "cookies", label: "Cookies y tecnologías" },
+  { id: "your-rights", label: "Sus derechos y opciones" },
+  { id: "dpo", label: "Delegados de protección" },
+  { id: "other", label: "Otra información importante" },
+]
+---
+
+<Legal
+  title="Políticas de Privacidad"
+  description="Cómo recopilamos, usamos y protegemos su información personal cuando interactúa con los servicios de Konnect 360."
+  updatedAt="Enero 2024"
+  sections={sections}
+  cta={{
+    title: "¿Tienes preguntas sobre nuestra política?",
+    description: "Escríbenos a ventas@konnect-360.com o contáctanos directamente.",
+  }}
+>
+  <section id="intro">
+    <h2>Introducción</h2>
+    <p>
+      En <strong>Optimus Tech</strong> y nuestros afiliados estamos comprometidos a proteger tu privacidad. Esta Política de privacidad se aplica a la información y los datos personales recopilados por Konnect 360 cuando interactúas con nuestros sitios web, productos y servicios. Esto incluye cuando:
+    </p>
+    <ul>
+      <li>Interactúas con nosotros en nuestros sitios web o a través de otros canales (por ejemplo, comunicándote vía WhatsApp, Instagram, Facebook, etc.).</li>
+      <li>Usas nuestros productos y servicios (incluido el servicio de suscripción de Konnect 360).</li>
+    </ul>
+    <p>
+      Esta Política describe cómo recopilamos, recibimos, usamos, almacenamos, compartimos, transferimos y procesamos sus Datos personales. Si no está de acuerdo con esta Política, no debe usar nuestros sitios web, productos y servicios.
+    </p>
+  </section>
+
+  <section id="updates">
+    <h2>Actualizaciones y contacto</h2>
+    <p>
+      Actualizamos esta Política de privacidad de vez en cuando y le alentamos a revisarla periódicamente. Publicaremos cualquier cambio en esta página.
+    </p>
+    <p>Si tiene alguna pregunta o desea ejercer sus derechos de privacidad, comuníquese con nosotros:</p>
+    <ul>
+      <li>Correo electrónico: <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a></li>
+      <li>Dirección postal: Av. Mayor Andres Razuri N° 172, San Miguel, Lima, Perú</li>
+    </ul>
+    <p>
+      Los datos personales tratados serán alojados en servidores seguros. Optimus Tech no tendrá acceso a dicha información más allá de la necesaria para asegurar la ejecución de los servicios.
+    </p>
+  </section>
+
+  <section id="data-collected">
+    <h2>1. Información que recopilamos y gestionamos</h2>
+
+    <h3>a. Información que das a Konnect 360</h3>
+    <p>
+      Cuando interactúa con nosotros a través de nuestros sitios web o utiliza el Servicio de suscripción, podemos recopilar Datos personales y otra información, como su correo electrónico, nombre, apellidos, cargo y otra información comercial similar.
+    </p>
+
+    <h3>Información de la cuenta y del usuario</h3>
+    <p>
+      Recogemos datos personales cuando abres una cuenta de Konnect 360, creas o modificas tu información de usuario, configuras preferencias o proporcionas información para acceder al servicio.
+    </p>
+
+    <h3>Información de pago</h3>
+    <p>
+      Recopilamos información de pago y de facturación cuando te registras en productos o servicios de pago. Trabajamos con la plataforma de pago <strong>Stripe</strong>, con cuenta verificada y 100% segura.
+    </p>
+
+    <h3>b. Información que tratamos en nombre de nuestros clientes</h3>
+    <p>
+      Nuestro servicio de suscripción permite a nuestros clientes crear y compartir contenido de marketing, ventas y servicio al cliente. No controlamos el contenido de las páginas web de nuestros clientes ni los tipos de datos personales que estos podrían recopilar a través del servicio.
+    </p>
+
+    <h3>c. Información que recopilamos cuando usas el servicio</h3>
+    <h4>Datos de uso</h4>
+    <p>
+      Recogemos datos de uso cuando interactúas con el servicio de suscripción, incluidas métricas e información sobre cómo lo utilizas.
+    </p>
+    <h4>Aplicaciones móviles</h4>
+    <p>
+      Cuando accedes desde nuestras aplicaciones móviles, recopilamos automáticamente datos del dispositivo, como modelo, versión, identificadores y sistema operativo.
+    </p>
+    <h4>Integraciones a terceros</h4>
+    <p>
+      Puedes conectar integraciones de terceros con tu cuenta. No nos hacemos responsables de las prácticas de terceros, así que revisa los permisos que les otorgas.
+    </p>
+
+    <h3>d. Información que recopilamos de las plataformas de Meta</h3>
+    <p>Cuando conectas tu cuenta con Meta (Facebook, Instagram, WhatsApp), podemos recopilar:</p>
+    <ul>
+      <li><strong>Información del perfil:</strong> nombre, foto y otra información pública.</li>
+      <li><strong>Mensajes:</strong> contenido y metadatos de mensajes enviados y recibidos.</li>
+      <li><strong>Contactos:</strong> tu lista de contactos o amigos, con consentimiento explícito.</li>
+    </ul>
+    <p>
+      Toda la información recopilada de Meta se almacena de forma segura en nuestros servidores y no se comparte con terceros, salvo cuando sea necesario para proporcionar el servicio o cuando la ley lo exija.
+    </p>
+  </section>
+
+  <section id="how-we-process">
+    <h2>2. Cómo tratamos los datos personales</h2>
+
+    <h3>a. Para comunicarnos contigo</h3>
+    <p>Usamos tu información para contactarte mediante correos transaccionales o WhatsApp sobre facturación, gestión de la cuenta y otros asuntos administrativos.</p>
+
+    <h3>b. Para suministrar el servicio</h3>
+    <p>Usamos la información de tu cuenta y datos de cliente para brindarte los productos y servicios, autenticar el inicio de sesión y prestar asistencia.</p>
+
+    <h3>c. Para desarrollar y mejorar nuestros productos</h3>
+    <p>Usamos los datos de uso para evaluar tendencias y mejorar productos y servicios.</p>
+
+    <h3>d. Para proteger a los usuarios y los productos</h3>
+    <p>Usamos la información para investigar y prevenir incidentes de seguridad, verificar cuentas y detectar usos indebidos.</p>
+
+    <h3>e. Para comercializar y promocionar el servicio</h3>
+    <p>Usamos tu información para promocionar nuestros productos. Puedes solicitar dejar de recibir contenido promocional escribiendo a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>.</p>
+  </section>
+
+  <section id="how-we-share">
+    <h2>3. Cómo compartimos datos personales</h2>
+
+    <h3>a. Proveedores de servicios</h3>
+    <p>Podemos compartir datos con proveedores externos que nos ayudan con sitios web, productos y servicios. En todos los casos, exigimos a dichos proveedores que reconozcan y respeten nuestras políticas de privacidad.</p>
+
+    <h3>b. Divulgación obligatoria</h3>
+    <p>Nos reservamos el derecho de usar o divulgar tu información si la ley lo exige o creemos necesario para proteger nuestros derechos, tu seguridad o la de otras personas, o cumplir con una obligación legal.</p>
+  </section>
+
+  <section id="image-rights">
+    <h2>4. Explotación de los derechos de imagen</h2>
+    <p>
+      Para realizar campañas informativas, comerciales y promocionales, podremos tratar la imagen de los usuarios que participen en eventos relacionados con la Suscripción, para su reproducción y difusión pública en nuestras redes sociales y/o sitios web. La base legal es el consentimiento otorgado al aceptar los términos. El cedente puede revocar su consentimiento en cualquier momento.
+    </p>
+  </section>
+
+  <section id="cookies">
+    <h2>5. Cookies y tecnologías similares</h2>
+
+    <h3>a. Cookies</h3>
+    <p>
+      Cuando visitas nuestros sitios web, recopilamos información mediante tecnologías de seguimiento, como cookies y píxeles. Konnect 360 las usa para analizar tendencias, administrar el sitio y hacer seguimiento de actividades.
+    </p>
+
+    <h3>b. Publicidad</h3>
+    <p>
+      Colaboramos con redes publicitarias externas para mostrar anuncios en nuestro sitio o administrar nuestra publicidad en otros sitios.
+    </p>
+  </section>
+
+  <section id="your-rights">
+    <h2>6. Sus derechos y opciones de privacidad</h2>
+
+    <h3>a. Solicitudes relacionadas con datos personales</h3>
+    <p>Tus derechos a la protección de datos son los siguientes:</p>
+    <ul>
+      <li><strong>Acceso, corrección o eliminación.</strong> Puedes solicitar acceso a tu información personal y su corrección, actualización o eliminación.</li>
+      <li><strong>Objeción.</strong> Puedes oponerte al tratamiento de tus datos personales, pedir restricciones o solicitar portabilidad.</li>
+      <li><strong>Retiro del consentimiento.</strong> Si has otorgado tu consentimiento, puedes retirarlo en cualquier momento.</li>
+      <li><strong>Reclamación.</strong> Tienes derecho a presentar reclamaciones ante una autoridad de protección de datos.</li>
+    </ul>
+    <p>No vendemos información personal.</p>
+    <p>Para ejercer cualquiera de estos derechos, envía un correo a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>.</p>
+
+    <h3>b. Cancelar la suscripción a nuestras comunicaciones</h3>
+    <p>Puedes cancelar la suscripción a comunicaciones de marketing haciendo clic en el enlace incluido al final de los correos electrónicos.</p>
+  </section>
+
+  <section id="dpo">
+    <h2>7. Delegados de protección de datos</h2>
+    <p>
+      Si tienes preguntas sobre esta política, escríbenos a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a> o por correo postal a Av. Mayor Andres Razuri N° 172, San Miguel, Lima, Perú.
+    </p>
+  </section>
+
+  <section id="other">
+    <h2>8. Otra información importante de privacidad</h2>
+
+    <h3>a. No vendemos datos personales</h3>
+    <p>Nunca venderemos tus datos personales a un tercero.</p>
+
+    <h3>b. Información sobre menores</h3>
+    <p>
+      Los sitios web, productos y servicios no están dirigidos a menores de 16 años, y no recopilamos información de ellos de manera consciente. Si crees que hemos recopilado datos de un menor, contacta a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>.
+    </p>
+  </section>
+</Legal>

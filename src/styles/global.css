@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/syne";
+@import "@fontsource-variable/karla";
+@import "@fontsource-variable/geist-mono";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ *
+ * Brand identity — single source of truth.
+ * Swap the entire palette by editing --brand-h and --brand-c only.
+ * Do NOT reference these in components — use semantic tokens below.
+ * ------------------------------------------------------------------ */
+:root {
+  --brand-h: 285;
+  --brand-c: 0.18;
+}
+
+/* ------------------------------------------------------------------ *
+ * Semantic tokens (shadcn convention). Components only use these.
+ * Light theme.
+ * ------------------------------------------------------------------ */
+:root {
+  --radius: 1.25rem;
+
+  --background: oklch(0.99 0.005 var(--brand-h));
+  --foreground: oklch(0.18 0.02 var(--brand-h));
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 var(--brand-h));
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 var(--brand-h));
+
+  --primary: oklch(0.52 var(--brand-c) var(--brand-h));
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.96 0.015 var(--brand-h));
+  --secondary-foreground: oklch(0.25 0.04 var(--brand-h));
+
+  --muted: oklch(0.96 0.01 var(--brand-h));
+  --muted-foreground: oklch(0.5 0.02 var(--brand-h));
+
+  --accent: oklch(0.94 0.025 var(--brand-h));
+  --accent-foreground: oklch(0.25 0.04 var(--brand-h));
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+
+  --border: oklch(0.92 0.01 var(--brand-h));
+  --input: oklch(0.92 0.01 var(--brand-h));
+  --ring: oklch(0.55 var(--brand-c) var(--brand-h));
+
+  --chart-1: oklch(0.55 var(--brand-c) var(--brand-h));
+  --chart-2: oklch(0.65 0.15 calc(var(--brand-h) + 40));
+  --chart-3: oklch(0.6 0.13 calc(var(--brand-h) - 60));
+  --chart-4: oklch(0.7 0.16 calc(var(--brand-h) + 80));
+  --chart-5: oklch(0.5 0.14 calc(var(--brand-h) - 30));
+
+  --sidebar: oklch(0.985 0.005 var(--brand-h));
+  --sidebar-foreground: oklch(0.18 0.02 var(--brand-h));
+  --sidebar-primary: oklch(0.52 var(--brand-c) var(--brand-h));
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.94 0.025 var(--brand-h));
+  --sidebar-accent-foreground: oklch(0.25 0.04 var(--brand-h));
+  --sidebar-border: oklch(0.92 0.01 var(--brand-h));
+  --sidebar-ring: oklch(0.55 var(--brand-c) var(--brand-h));
+
+  --font-display: "Syne Variable", "ui-sans-serif", system-ui, sans-serif;
+  --font-sans: "Karla Variable", "ui-sans-serif", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", "ui-monospace", "SF Mono", monospace;
+}
+
+/* ------------------------------------------------------------------ *
+ * Dark theme — chroma stays, lightness flips, hue intact.
+ * ------------------------------------------------------------------ */
+.dark {
+  --background: oklch(0.16 0.02 var(--brand-h));
+  --foreground: oklch(0.97 0.01 var(--brand-h));
+
+  --card: oklch(0.21 0.025 var(--brand-h));
+  --card-foreground: oklch(0.97 0.01 var(--brand-h));
+
+  --popover: oklch(0.21 0.025 var(--brand-h));
+  --popover-foreground: oklch(0.97 0.01 var(--brand-h));
+
+  --primary: oklch(0.7 var(--brand-c) var(--brand-h));
+  --primary-foreground: oklch(0.16 0.02 var(--brand-h));
+
+  --secondary: oklch(0.27 0.03 var(--brand-h));
+  --secondary-foreground: oklch(0.97 0.01 var(--brand-h));
+
+  --muted: oklch(0.27 0.025 var(--brand-h));
+  --muted-foreground: oklch(0.7 0.02 var(--brand-h));
+
+  --accent: oklch(0.32 0.04 var(--brand-h));
+  --accent-foreground: oklch(0.97 0.01 var(--brand-h));
+
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.7 var(--brand-c) var(--brand-h));
+
+  --chart-1: oklch(0.7 var(--brand-c) var(--brand-h));
+  --chart-2: oklch(0.7 0.15 calc(var(--brand-h) + 40));
+  --chart-3: oklch(0.65 0.13 calc(var(--brand-h) - 60));
+  --chart-4: oklch(0.75 0.16 calc(var(--brand-h) + 80));
+  --chart-5: oklch(0.6 0.14 calc(var(--brand-h) - 30));
+
+  --sidebar: oklch(0.21 0.025 var(--brand-h));
+  --sidebar-foreground: oklch(0.97 0.01 var(--brand-h));
+  --sidebar-primary: oklch(0.7 var(--brand-c) var(--brand-h));
+  --sidebar-primary-foreground: oklch(0.16 0.02 var(--brand-h));
+  --sidebar-accent: oklch(0.32 0.04 var(--brand-h));
+  --sidebar-accent-foreground: oklch(0.97 0.01 var(--brand-h));
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.7 var(--brand-c) var(--brand-h));
+}
+
+/* ------------------------------------------------------------------ *
+ * Tailwind v4 @theme inline — exposes tokens as utility classes.
+ * ------------------------------------------------------------------ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.7);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.25);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-3xl: calc(var(--radius) * 2);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* ------------------------------------------------------------------ *
+ * Animations.
+ * ------------------------------------------------------------------ */
+@theme {
+  --animate-fade-in: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-rise: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Base.
+ * ------------------------------------------------------------------ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: light dark;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+}

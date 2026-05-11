@@ -1,0 +1,147 @@
+---
+import Legal from "@/layouts/Legal.astro"
+
+const sections = [
+  { id: "definitions", label: "Definiciones" },
+  { id: "general-info", label: "Información general" },
+  { id: "scope", label: "Objeto y ámbito" },
+  { id: "acquisition", label: "Proceso de adquisición" },
+  { id: "purchase", label: "Proceso de compra" },
+  { id: "demo", label: "Versión de demostración" },
+  { id: "renewal", label: "Renovación y cancelación" },
+  { id: "payment", label: "Métodos de pago" },
+  { id: "obligations", label: "Obligaciones" },
+]
+---
+
+<Legal
+  title="Términos y Condiciones"
+  description="Condiciones generales que regulan la adquisición y uso del servicio de suscripción de Konnect 360."
+  updatedAt="Enero 2024"
+  sections={sections}
+  cta={{
+    title: "¿Tienes dudas sobre los términos?",
+    description: "Escríbenos a ventas@konnect-360.com o contáctanos directamente.",
+  }}
+>
+  <section id="preamble">
+    <p>
+      Por favor, lea atentamente los siguientes Términos y Condiciones Particulares (en lo sucesivo, "Términos") con detenimiento antes de adquirir cualquiera de las modalidades de suscripción que Konnect 360 ofrece ("Servicios de Konnect 360"). El comprador, al formalizar la contratación, manifiesta haber leído y comprendido en su integridad los Términos aquí descritos.
+    </p>
+    <p>
+      Estos Términos también aplican a cualquier contenido multimedia, servicio o enlace, u otro material que se ponga a disposición a través del Servicio de Konnect 360 (en adelante, el "Contenido").
+    </p>
+    <p>
+      El uso del Servicio podrá estar sujeto a términos adicionales si así lo establece Optimus Tech al incorporarlos a los presentes con su debida referencia.
+    </p>
+    <p>
+      Si no está de acuerdo con quedar obligado/a a estos Términos, le rogamos no proceder con la adquisición de la Suscripción de Konnect 360. Para cualquier duda, escriba a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>.
+    </p>
+  </section>
+
+  <section id="definitions">
+    <h2>Definiciones</h2>
+    <p><strong>Sitio Web:</strong> todas las páginas y materiales bajo el dominio www.konnect-360.com.</p>
+    <p><strong>Plataforma Online:</strong> sitio web privado donde los Compradores acceden a los Servicios de Konnect 360.</p>
+    <p><strong>Usuario:</strong> persona que accede al Sitio Web pero aún no cuenta con cuenta registrada.</p>
+    <p><strong>Comprador:</strong> persona física o jurídica que adquiere la Suscripción.</p>
+    <p><strong>Consumidor:</strong> Comprador que actúa con un propósito ajeno a su actividad comercial, empresarial o profesional.</p>
+    <p><strong>Partners:</strong> empresas con convenio de colaboración con Konnect 360.</p>
+    <p><strong>Comunidad:</strong> canales de mensajería disponibles para conectar miembros del ecosistema.</p>
+    <p><strong>Suscripción:</strong> diferentes categorías de productos ofrecidos por Konnect 360.</p>
+    <p><strong>Servicios:</strong> conjunto de servicios prestados por Konnect 360.</p>
+  </section>
+
+  <section id="general-info">
+    <h2>Información general</h2>
+    <p>
+      El titular de la Suscripción es Optimus Tech (en adelante "Konnect 360"), con domicilio fiscal en Av. Mayor Andres Razuri N° 172, San Miguel, Lima, Perú. Para contactar puede usar la dirección postal o el correo <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>.
+    </p>
+    <p>
+      El no ejercicio o ejecución por parte de Konnect 360 de cualquier derecho contenido en estos Términos no constituirá renuncia, salvo reconocimiento expreso por escrito.
+    </p>
+    <p>
+      Konnect 360 podrá realizar modificaciones periódicas de estos Términos. En caso de cambios sustanciales, se notificará por correo electrónico.
+    </p>
+  </section>
+
+  <section id="scope">
+    <h2>Objeto y ámbito de aplicación</h2>
+    <p>
+      La adquisición de la Suscripción deberá efectuarse según las instrucciones aquí indicadas y cualesquiera disposiciones específicas mostradas en pantalla durante la navegación.
+    </p>
+  </section>
+
+  <section id="acquisition">
+    <h2>Trámites y proceso de adquisición</h2>
+
+    <h3>Requisitos para la contratación</h3>
+    <p>El acceso a la Plataforma supone aceptar las advertencias legales y términos. El Comprador declara:</p>
+    <ul>
+      <li>Haber leído y comprendido las presentes Condiciones de Uso, Políticas de Privacidad y Aviso Legal.</li>
+      <li>Tener capacidad suficiente para contratar (mayor de 18 años).</li>
+      <li>Asumir las obligaciones aquí dispuestas.</li>
+    </ul>
+
+    <h3>Precios y ofertas</h3>
+    <p>
+      La Suscripción ofertada incluirá un detalle de los Servicios y su precio. El precio se mostrará en dólares estadounidenses o moneda local, e incluirá los impuestos aplicables, salvo que se indique lo contrario.
+    </p>
+    <p>
+      Konnect 360 podrá modificar el precio de la Suscripción para los períodos aún no pagados, comunicando los cambios con la debida antelación.
+    </p>
+  </section>
+
+  <section id="purchase">
+    <h2>Proceso de compra</h2>
+    <p>Para adquirir la Suscripción, el Comprador debe disponer de un dispositivo con conexión a internet. Se le solicitarán los siguientes datos:</p>
+    <ul>
+      <li>Nombre y apellidos.</li>
+      <li>Nombre de la empresa (si aplica).</li>
+      <li>Domicilio: país, región, localidad y provincia.</li>
+      <li>Teléfono.</li>
+      <li>Correo electrónico.</li>
+      <li>Código del cupón (si aplica).</li>
+      <li>Método de pago.</li>
+    </ul>
+    <p>El pago se realizará mediante tarjeta de crédito o débito, o cualquier otro medio habilitado en la Plataforma.</p>
+  </section>
+
+  <section id="demo">
+    <h2>Versión de demostración</h2>
+    <p>
+      Konnect 360 podrá ofrecer una versión de demostración por tiempo limitado, durante 14 días desde el primer acceso, una sola vez por usuario.
+    </p>
+  </section>
+
+  <section id="renewal">
+    <h2>Renovación y cancelación</h2>
+    <p>
+      El pago se renovará automáticamente al final del período de suscripción aplicable, salvo cancelación previa.
+    </p>
+    <p>
+      Para cancelar, envíe un correo a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a> con la palabra "BAJA" en el asunto, tres días hábiles antes de la fecha de renovación.
+    </p>
+  </section>
+
+  <section id="payment">
+    <h2>Métodos de pago</h2>
+    <p>No se aceptarán formas de pago distintas a las descritas, salvo comunicación oficial:</p>
+    <p><strong>Pago con tarjeta:</strong> Stripe, plataforma segura con TPV virtual, certificado SSL y certificación PCI DSS.</p>
+  </section>
+
+  <section id="obligations">
+    <h2>Obligaciones de Konnect 360</h2>
+    <p>Konnect 360 se compromete a:</p>
+    <ul>
+      <li>Dar acceso a la Plataforma, documentación y funcionalidades contratadas.</li>
+      <li>Enviar confirmación de la adquisición por correo electrónico.</li>
+      <li>Emplear la atención y profesionalidad razonables en la prestación.</li>
+    </ul>
+
+    <h3>Responsabilidades del comprador</h3>
+    <p>
+      El Comprador será responsable de cumplir estos Términos, la ley vigente y las costumbres aceptadas, así como de la veracidad y vigencia de los datos proporcionados.
+    </p>
+  </section>
+</Legal>

@@ -1,0 +1,120 @@
+---
+import { Image } from "astro:assets"
+import logo from "@/assets/icons/logo-black.svg"
+import { nav } from "@/content/site.config"
+import { ThemeToggle } from "./ThemeToggle"
+import { MobileMenu } from "./MobileMenu"
+import Container from "./Container.astro"
+import { buttonVariants } from "@/components/ui/button"
+
+const { pathname } = Astro.url
+const isHome = pathname === "/"
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+  <Container class="flex items-center justify-between gap-4 py-3">
+    <a href="/" class="flex items-center gap-2" aria-label="Konnect 360">
+      <Image
+        src={logo}
+        alt="Konnect 360"
+        class="h-9 w-auto dark:invert"
+        loading="eager"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-7 md:flex">
+      {
+        nav.primary.map((rawItem) => {
+          const item = rawItem as { href: string; label: string; hash?: string }
+          const hash = item.hash
+          const isActiveRoute = hash === undefined && pathname === item.href
+          return (
+            <a
+              href={item.href}
+              data-nav-hash={hash ?? ""}
+              data-active={
+                isHome && hash ? "false" : isActiveRoute ? "true" : "false"
+              }
+              class="nav-link text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {item.label}
+            </a>
+          )
+        })
+      }
+    </nav>
+
+    <div class="hidden items-center gap-2 md:flex">
+      <ThemeToggle client:load />
+      <button type="button" class={buttonVariants({ size: "sm" })}>
+        {nav.cta.label}
+      </button>
+    </div>
+
+    <div class="flex items-center gap-1 md:hidden">
+      <ThemeToggle client:load />
+      <MobileMenu
+        client:load
+        items={[...nav.primary]}
+        cta={{ label: nav.cta.label }}
+      />
+    </div>
+  </Container>
+</header>
+
+<style>
+  .nav-link[data-active="true"] {
+    color: var(--primary);
+  }
+  .nav-link[data-active="true"]::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    bottom: -0.5rem;
+    height: 2px;
+    width: 100%;
+    border-radius: 9999px;
+    background-color: var(--primary);
+  }
+  .nav-link {
+    position: relative;
+    padding-block: 0.125rem;
+  }
+</style>
+
+<script>
+  function initNavScrollSpy() {
+    if (window.location.pathname !== "/") return
+    const ids = ["start", "why-us", "services"]
+    const links = document.querySelectorAll<HTMLAnchorElement>(
+      "[data-nav-hash]",
+    )
+    function setActive(activeHash: string) {
+      links.forEach((link) => {
+        const hash = link.dataset.navHash
+        if (!hash) return
+        link.dataset.active = hash === activeHash ? "true" : "false"
+      })
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id)
+            break
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
+    )
+    ids.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+  }
+
+  initNavScrollSpy()
+  document.addEventListener("astro:after-swap", initNavScrollSpy)
+</script>
