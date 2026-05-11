@@ -16,8 +16,7 @@ const {
   description = site.description,
 } = Astro.props
 
-const tenantRedirectUrl =
-  import.meta.env.PUBLIC_URL_REDIRECT_APP_TENNANT ?? ""
+const tenantRedirectUrl = import.meta.env.PUBLIC_URL_REDIRECT_APP_TENNANT ?? ""
 ---
 
 <!doctype html>
@@ -48,7 +47,7 @@ const tenantRedirectUrl =
       ;(function () {
         var stored = localStorage.getItem("colorTheme")
         var prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
+          "(prefers-color-scheme: dark)"
         ).matches
         var isDark = stored === "dark" || (!stored && prefersDark)
         document.documentElement.classList.toggle("dark", isDark)
@@ -60,7 +59,30 @@ const tenantRedirectUrl =
     <main class="flex-1" transition:animate={fade({ duration: "0.35s" })}>
       <slot />
     </main>
+    <div id="widget-chat"></div>
     <Footer transition:persist transition:name="site-footer" />
     <BackToTop transition:persist transition:name="back-to-top" />
+    <script type="module" is:inline>
+      import { konnectchat } from "https://kapi.konnect-360.com/widget/konnectchat.es.min.js"
+
+      konnectchat("widget-chat", {
+        identifier: "987654321",
+        pageBot: {
+          title: "Agente Konnect-360", // string - titulo en página bot
+          botName: "Konnan", // string - nombre del bot
+        },
+        pagePresentation: {
+          title: "Atencion al cliente", // string - titulo de presentación
+          withWhatsAppButton: false, // boolean - ocultar boton de whatsapp
+          withHeaderBot: true, // boolean - ver/ocultar header del bot
+        },
+        theme: {
+          colors: {
+            "chat-sender-color": "207, 156, 255",
+          },
+        },
+        darkMode: false,
+      })
+    </script>
   </body>
 </html>
