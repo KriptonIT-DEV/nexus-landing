@@ -48,9 +48,14 @@ const isHome = pathname === "/"
 
     <div class="hidden items-center gap-2 md:flex">
       <ThemeToggle client:load />
-      <button type="button" class={buttonVariants({ size: "sm" })}>
+      <a
+        href={import.meta.env.PUBLIC_URL_STATIC_APP_TENNANT}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={buttonVariants({ size: "sm" })}
+      >
         {nav.cta.label}
-      </button>
+      </a>
     </div>
 
     <div class="flex items-center gap-1 md:hidden">
@@ -58,7 +63,7 @@ const isHome = pathname === "/"
       <MobileMenu
         client:load
         items={[...nav.primary]}
-        cta={{ label: nav.cta.label }}
+        cta={{ label: nav.cta.label, href: import.meta.env.PUBLIC_URL_STATIC_APP_TENNANT }}
       />
     </div>
   </Container>

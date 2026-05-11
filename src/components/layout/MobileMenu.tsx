@@ -15,7 +15,7 @@ type NavItem = { href: string; label: string }
 
 interface Props {
   items: NavItem[]
-  cta: { label: string }
+  cta: { label: string; href: string }
 }
 
 export function MobileMenu({ items, cta }: Props) {
@@ -53,9 +53,14 @@ export function MobileMenu({ items, cta }: Props) {
         <Separator className="mx-4 w-auto" />
         <div className="px-4 pb-6">
           <SheetClose asChild>
-            <Button type="button" className="w-full">
+            <a
+              href={cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+            >
               {cta.label}
-            </Button>
+            </a>
           </SheetClose>
         </div>
       </SheetContent>
