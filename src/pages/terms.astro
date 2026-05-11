@@ -5,12 +5,15 @@ const sections = [
   { id: "definitions", label: "Definiciones" },
   { id: "general-info", label: "Información general" },
   { id: "scope", label: "Objeto y ámbito" },
-  { id: "acquisition", label: "Proceso de adquisición" },
+  { id: "requirements", label: "Requisitos para la contratación" },
+  { id: "prices", label: "Precios y ofertas" },
   { id: "purchase", label: "Proceso de compra" },
   { id: "demo", label: "Versión de demostración" },
   { id: "renewal", label: "Renovación y cancelación" },
   { id: "payment", label: "Métodos de pago" },
-  { id: "obligations", label: "Obligaciones" },
+  { id: "features", label: "Características y garantía" },
+  { id: "obligations", label: "Obligaciones de Konnect 360" },
+  { id: "buyer-responsibilities", label: "Responsabilidades del comprador" },
 ]
 ---
 
@@ -26,122 +29,204 @@ const sections = [
 >
   <section id="preamble">
     <p>
-      Por favor, lea atentamente los siguientes Términos y Condiciones Particulares (en lo sucesivo, "Términos") con detenimiento antes de adquirir cualquiera de las modalidades de suscripción que Konnect 360 ofrece ("Servicios de Konnect 360"). El comprador, al formalizar la contratación, manifiesta haber leído y comprendido en su integridad los Términos aquí descritos.
+      Por favor, lea atentamente los siguientes Términos y Condiciones Particulares de los clientes (en lo sucesivo, "Términos") con detenimiento antes de adquirir cualquiera de las modalidades de suscripción que Konnect 360 ofrece ("Servicios de Konnect 360"). El comprador, al formalizar la contratación, manifiesta haber leído y comprendido en su integridad los Términos aquí descritos.
     </p>
     <p>
-      Estos Términos también aplican a cualquier contenido multimedia, servicio o enlace, u otro material que se ponga a disposición a través del Servicio de Konnect 360 (en adelante, el "Contenido").
+      Estos Términos también se aplican a cualquier contenido multimedia, servicio o enlace al mismo, u otro material que se ponga a disposición a través del Servicio de Konnect 360 (en adelante, el "Contenido").
     </p>
     <p>
-      El uso del Servicio podrá estar sujeto a términos adicionales si así lo establece Optimus Tech al incorporarlos a los presentes con su debida referencia.
+      El uso del Servicio de Konnect 360 podrá estar sujeto a términos y condiciones adicionales si así lo establece Optimus Tech al incorporarlos a los presentes con su debida referencia.
     </p>
     <p>
-      Si no está de acuerdo con quedar obligado/a a estos Términos, le rogamos no proceder con la adquisición de la Suscripción de Konnect 360. Para cualquier duda, escriba a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>.
+      Si desea leer con mayor detenimiento los Términos, puede imprimirlos en papel o guardar el documento en formato electrónico.
+    </p>
+    <p>
+      Si no está de acuerdo con el compromiso de quedar obligado/a a los Términos aquí descritos, rogamos que no proceda con la adquisición de la Suscripción de Konnect 360. En caso de tener dudas, le rogamos que se ponga en contacto a través de <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>.
     </p>
   </section>
 
   <section id="definitions">
     <h2>Definiciones</h2>
-    <p><strong>Sitio Web:</strong> todas las páginas y materiales bajo el dominio www.konnect-360.com.</p>
-    <p><strong>Plataforma Online:</strong> sitio web privado donde los Compradores acceden a los Servicios de Konnect 360.</p>
-    <p><strong>Usuario:</strong> persona que accede al Sitio Web pero aún no cuenta con cuenta registrada.</p>
-    <p><strong>Comprador:</strong> persona física o jurídica que adquiere la Suscripción.</p>
-    <p><strong>Consumidor:</strong> Comprador que actúa con un propósito ajeno a su actividad comercial, empresarial o profesional.</p>
-    <p><strong>Partners:</strong> empresas con convenio de colaboración con Konnect 360.</p>
-    <p><strong>Comunidad:</strong> canales de mensajería disponibles para conectar miembros del ecosistema.</p>
-    <p><strong>Suscripción:</strong> diferentes categorías de productos ofrecidos por Konnect 360.</p>
-    <p><strong>Servicios:</strong> conjunto de servicios prestados por Konnect 360.</p>
+    <p><strong>Sitio Web:</strong> todas las páginas, contenidos y materiales almacenados y que se pueden visualizar bajo el dominio www.konnect-360.com. El término Sitio Web hace referencia a la parte visible durante la navegación (parte pública).</p>
+    <p><strong>Plataforma Online o de Servicios:</strong> sitio web privado donde los Compradores pueden acceder a todos los Servicios de Konnect 360 propios del tipo de Suscripción que hayan adquirido. Los Compradores acceden a su espacio a través de un email y contraseña, tras completar el registro correspondiente.</p>
+    <p><strong>Usuario:</strong> persona que accede y navega dentro del Sitio Web y/o la Plataforma Online pero que todavía no cuenta con una cuenta registrada en la Plataforma Online.</p>
+    <p><strong>Comprador:</strong> persona física o jurídica que adquiere la Suscripción disponible en la Plataforma Online y que, por tanto, pasa a disponer de una cuenta registrada en la misma.</p>
+    <p><strong>Consumidor:</strong> Compradores que actúan con un propósito ajeno a su actividad comercial, empresarial, oficio o profesión.</p>
+    <p><strong>Partners:</strong> empresas que trabajan con Konnect 360 que tienen convenio con nosotros para colaboración.</p>
+    <p><strong>Comunidad:</strong> todos los canales de mensajería disponibles con el objetivo de poner en contacto a diferentes miembros del ecosistema con el fin de construir relaciones estratégicas de calidad.</p>
+    <p><strong>Contenido:</strong> cualquier contenido multimedia, servicio o enlace al mismo u otro material que se ponga a disposición a través de los Servicios de Konnect 360.</p>
+    <p><strong>Suscripción:</strong> las diferentes categorías del/los producto/s ofrecido/s por Konnect 360 a través de su Plataforma Online que buscan ayudar a los usuarios con la atención al cliente (SaaS) a través de nuestra herramienta multicanal.</p>
+    <p><strong>Servicios:</strong> conjunto de los servicios que presta Konnect 360 independientemente de la Plataforma Online a través de la que se lleve a cabo la prestación.</p>
+    <p><strong>Términos y Condiciones:</strong> conjunto de condiciones generales y cláusulas básicas recogidas en el presente documento, que regulan los derechos y obligaciones derivados del acceso, la navegación y el uso por parte del Comprador de la Plataforma Online en relación con la Suscripción que ofrece Konnect 360.</p>
   </section>
 
   <section id="general-info">
     <h2>Información general</h2>
     <p>
-      El titular de la Suscripción es Optimus Tech (en adelante "Konnect 360"), con domicilio fiscal en Av. Mayor Andres Razuri N° 172, San Miguel, Lima, Perú. Para contactar puede usar la dirección postal o el correo <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>.
+      El titular de la Suscripción y todos los servicios ofrecidos en la Plataforma Online son de Optimus Tech (en adelante "Konnect 360"), con domicilio fiscal: Av. Andres Razuri 172, San Miguel, Perú. El Comprador puede contactar a través de dicha dirección postal o del correo electrónico <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>. Konnect 360 es la compañía titular del Sitio Web www.konnect-360.com, así como del dominio <a href="https://app.konnect-360.com/" target="_blank" rel="noopener noreferrer">https://app.konnect-360.com/</a>.
     </p>
     <p>
-      El no ejercicio o ejecución por parte de Konnect 360 de cualquier derecho contenido en estos Términos no constituirá renuncia, salvo reconocimiento expreso por escrito.
+      El no ejercicio o ejecución por parte de Konnect 360 de cualquier derecho o disposición contenida en los presentes Términos no constituirá una renuncia al mismo, salvo reconocimiento y acuerdo expreso por escrito con el Comprador.
     </p>
     <p>
-      Konnect 360 podrá realizar modificaciones periódicas de estos Términos. En caso de cambios sustanciales, se notificará por correo electrónico.
+      Por la propia naturaleza de los Servicios, Konnect 360 se reserva el derecho a alterar el Contenido de los mismos, así como el derecho a modificar de forma no sustancial los presentes Términos y Condiciones sin previo aviso.
+    </p>
+    <p>
+      Konnect 360 podrá realizar modificaciones o adaptaciones periódicas de los presentes Términos con el fin de adaptar el modelo de negocio a las tendencias y necesidades del mercado. En caso de realizar cambios sustanciales, se notificará por correo electrónico, dando al Comprador alternativas suficientes para asegurar el equilibrio entre las partes.
+    </p>
+    <p>
+      Le recomendamos que revise periódicamente estos Términos ya que las versiones revisadas serán vinculantes. El acceso o uso continuado de los Servicios después de la fecha efectiva de las modificaciones indica su aceptación de las mismas.
     </p>
   </section>
 
   <section id="scope">
     <h2>Objeto y ámbito de aplicación</h2>
     <p>
-      La adquisición de la Suscripción deberá efectuarse según las instrucciones aquí indicadas y cualesquiera disposiciones específicas mostradas en pantalla durante la navegación.
+      La adquisición de la Suscripción de Konnect 360 deberá efectuarse según las instrucciones mencionadas en estos Términos, así como cualesquiera otras disposiciones específicas que se indiquen en pantalla durante la navegación; de manera que el Comprador declara conocer y aceptar dichos trámites como necesarios para acceder a la información sobre la Suscripción ofrecida en la Plataforma Online y, en su caso, proceder a su contratación.
     </p>
   </section>
 
-  <section id="acquisition">
-    <h2>Trámites y proceso de adquisición</h2>
-
-    <h3>Requisitos para la contratación</h3>
-    <p>El acceso a la Plataforma supone aceptar las advertencias legales y términos. El Comprador declara:</p>
+  <section id="requirements">
+    <h2>Requisitos para la contratación</h2>
+    <p>El acceso y navegación en la Plataforma Online supone aceptar expresamente y conocer las advertencias legales, condiciones y términos de uso contenidas en ellas sin reserva alguna. El Comprador declara y reconoce:</p>
     <ul>
-      <li>Haber leído y comprendido las presentes Condiciones de Uso, Políticas de Privacidad y Aviso Legal.</li>
-      <li>Tener capacidad suficiente para contratar (mayor de 18 años).</li>
-      <li>Asumir las obligaciones aquí dispuestas.</li>
+      <li>Haber leído, entendido y comprendido íntegramente los términos de uso de las presentes Condiciones de Uso, Políticas de Privacidad y el Aviso Legal.</li>
+      <li>Ser una persona con capacidad suficiente para contratar. La participación está dirigida a personas físicas mayores de 18 años. El Comprador es el único responsable de la veracidad y exactitud de los datos proporcionados.</li>
+      <li>Asumir todas las obligaciones aquí dispuestas.</li>
     </ul>
+  </section>
 
-    <h3>Precios y ofertas</h3>
+  <section id="prices">
+    <h2>Precios y ofertas</h2>
     <p>
-      La Suscripción ofertada incluirá un detalle de los Servicios y su precio. El precio se mostrará en dólares estadounidenses o moneda local, e incluirá los impuestos aplicables, salvo que se indique lo contrario.
+      La Suscripción ofertada en la Plataforma Online incluirá un detalle de todos los Servicios que incluye y cuál será su precio de adquisición. El precio indicado en pantalla será mostrado en dólares estadounidenses o en la moneda local de cada país, e incluirá los impuestos directos aplicables, salvo que se establezca lo contrario. De existir un error tipográfico en alguno de los precios mostrados, Konnect 360 lo comunicará y el Comprador tendrá derecho a rescindir su compra sin ningún coste.
     </p>
     <p>
-      Konnect 360 podrá modificar el precio de la Suscripción para los períodos aún no pagados, comunicando los cambios con la debida antelación.
+      En el supuesto en que Konnect 360 realice campañas promocionales que incluyan descuentos, por ejemplo, a través de cupones o versiones de demostración, éstas se indicarán adecuadamente a través de diferentes medios. Las ofertas tienen una duración limitada en el tiempo y características diferentes en cada momento.
+    </p>
+    <p>
+      Konnect 360 podrá modificar el precio de la Suscripción de pago para los períodos aún no pagados, comunicando cualquier cambio a la dirección de correo electrónico del registro con la debida antelación. Los cambios de precio entrarán en vigor al inicio del siguiente periodo de suscripción. Si no está de acuerdo con un cambio de precio, podrá rechazarlo dándose de baja antes de que entre en vigor.
+    </p>
+    <p>
+      Los tipos impositivos se basan en los tipos aplicables en el momento de su cobro mensual. Estos importes podrán cambiar con el tiempo en función de los requisitos fiscales locales.
     </p>
   </section>
 
   <section id="purchase">
     <h2>Proceso de compra</h2>
-    <p>Para adquirir la Suscripción, el Comprador debe disponer de un dispositivo con conexión a internet. Se le solicitarán los siguientes datos:</p>
+    <p>
+      Para la adquisición de la Suscripción en la Plataforma Online, el Comprador deberá disponer de un dispositivo con conexión a internet. Deberá seleccionar el método de Suscripción deseado y completar la información requerida, tras lo cual deberá realizar el pago. Konnect 360 podrá solicitar los siguientes datos personales:
+    </p>
     <ul>
       <li>Nombre y apellidos.</li>
-      <li>Nombre de la empresa (si aplica).</li>
-      <li>Domicilio: país, región, localidad y provincia.</li>
+      <li>Nombre de la empresa (en su caso).</li>
+      <li>Domicilio personal o social: país, región, localidad y provincia.</li>
       <li>Teléfono.</li>
       <li>Correo electrónico.</li>
       <li>Código del cupón (si aplica).</li>
       <li>Método de pago.</li>
     </ul>
-    <p>El pago se realizará mediante tarjeta de crédito o débito, o cualquier otro medio habilitado en la Plataforma.</p>
+    <p>
+      El pago del precio de la Suscripción se realizará mediante tarjeta de crédito o débito, de conformidad con cualesquiera otros medios de pago en línea que en cada momento se habiliten en la Plataforma Online.
+    </p>
+    <p>
+      Para proceder al pago vía tarjeta de crédito o débito, se solicitará la siguiente información: (a) número de tarjeta; (b) fecha de caducidad; (c) CVV o CSC. Konnect 360 utiliza plataformas de pago de terceros que facilitan la transacción electrónica y proporcionan un ambiente completamente seguro para la realización de la transacción.
+    </p>
   </section>
 
   <section id="demo">
     <h2>Versión de demostración</h2>
     <p>
-      Konnect 360 podrá ofrecer una versión de demostración por tiempo limitado, durante 14 días desde el primer acceso, una sola vez por usuario.
+      Konnect 360 podrá ofrecer, de forma temporal y limitada, la posibilidad de probar una única vez una versión de demostración de la Plataforma Online, de carácter gratuito, durante un plazo de 14 días desde el acceso.
+    </p>
+    <p>
+      Previamente a que transcurra dicho plazo, Konnect 360 notificará al Comprador por correo electrónico los días restantes de la versión gratuita. Al finalizar el período, la versión de demostración se desactivará automáticamente y se activará la Suscripción de pago mensual recurrente, a menos que el Comprador hubiera cancelado la suscripción en tiempo y forma.
     </p>
   </section>
 
   <section id="renewal">
     <h2>Renovación y cancelación</h2>
     <p>
-      El pago se renovará automáticamente al final del período de suscripción aplicable, salvo cancelación previa.
+      El pago que el Comprador haga a Konnect 360 se renovará automáticamente al final del periodo de suscripción aplicable, a menos que cancele su Suscripción de pago antes de que finalice el periodo en curso.
     </p>
     <p>
-      Para cancelar, envíe un correo a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a> con la palabra "BAJA" en el asunto, tres días hábiles antes de la fecha de renovación.
+      Para proceder a la cancelación, deberá ponerse en contacto con el departamento de Customer Experience a través del correo <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a> con la palabra <strong>"BAJA"</strong> en el asunto, tres días hábiles antes de la fecha en la que se renueva la Suscripción.
+    </p>
+    <p>Las casuísticas bajo las cuales Konnect 360 considera que se puede proceder al reembolso total son las siguientes:</p>
+    <ul>
+      <li><strong>Derecho de desistimiento.</strong> En los contratos celebrados a distancia por un Comprador que tenga la consideración de Consumidor, éste tendrá derecho a desistir del contrato en el plazo de 14 días naturales siguientes a la contratación, sin alegar motivo y sin incurrir en coste alguno.</li>
+      <li><strong>Uso inexistente de la plataforma.</strong> En aquellos casos en los que ni el Comprador ni nadie autorizado hubiera utilizado ninguna de las ventajas de la Suscripción durante el período en curso, Konnect 360 reembolsará íntegramente la cuota. No obstante, solo se devolverá la totalidad correspondiente a los dos primeros meses.</li>
+    </ul>
+    <p>
+      En ningún caso el Comprador tendrá derecho a un reembolso parcial de la cuota de suscripción por haber hecho uso de las ventajas asociadas a la Suscripción durante el período anterior a la cancelación.
+    </p>
+    <p>
+      La Suscripción obtenida a través de un código promocional o de regalo no será reembolsable. Konnect 360 no proporcionará reembolsos ni créditos por ningún periodo de suscripción parcial.
     </p>
   </section>
 
   <section id="payment">
     <h2>Métodos de pago</h2>
-    <p>No se aceptarán formas de pago distintas a las descritas, salvo comunicación oficial:</p>
-    <p><strong>Pago con tarjeta:</strong> Stripe, plataforma segura con TPV virtual, certificado SSL y certificación PCI DSS.</p>
+    <p>No se aceptarán otras formas de pago diferentes a las descritas a continuación, a menos que Konnect 360 así lo indique mediante comunicación oficial:</p>
+    <p><strong>Pago con tarjeta: Stripe.</strong></p>
+    <p>
+      Se trata de un medio de pago completamente seguro a través de TPV virtual (pasarela de pagos), ya que los datos de la tarjeta bancaria viajan encriptados gracias a un servidor seguro con certificado SSL. Los proveedores de servicios de pago cuentan con la certificación PCI DSS y con el programa 3D-Secure para autenticar a los compradores y prevenir el fraude electrónico. Los datos de la tarjeta de crédito no quedan registrados en ninguna base de datos de Konnect 360.
+    </p>
+  </section>
+
+  <section id="features">
+    <h2>Características de la suscripción y garantía</h2>
+
+    <h3>Plataforma de Servicios</h3>
+    <p>
+      Plataforma (SaaS) diseñada para ayudar a las empresas a hacer seguimiento de sus relaciones con los clientes por los canales que usan, con automatizaciones. Además, nuestra plataforma ofrece servicios de visualización de métricas de marketing, entre otros.
+    </p>
+
+    <h3>Programa de Implementación</h3>
+    <p>
+      Después de haber accedido a la suscripción, tendrá acceso a la implementación por parte del equipo de Konnect 360, con contenido exclusivamente formativo de los Servicios incluidos en la Suscripción.
+    </p>
+
+    <p>
+      Konnect 360 prestará los servicios de SaaS con la máxima diligencia posible, dados los medios y las tecnologías actualmente existentes. No obstante, el Comprador debe ser consciente de que Konnect 360 no puede garantizar plenamente la fiabilidad, continuidad, utilidad, exactitud o veracidad de toda la información, Contenidos y materiales puestos a disposición a través de la Suscripción.
+    </p>
+
+    <h3>Garantía y responsabilidad (exclusivamente para Consumidores)</h3>
+    <p>
+      Konnect 360 responderá ante el Comprador que tenga la consideración de Consumidor, de cualquier falta de conformidad que exista en el momento de la entrega del Contenido o Servicio, pudiendo éste exigir la subsanación de dicha falta de conformidad, la reducción del precio o la resolución del contrato.
+    </p>
   </section>
 
   <section id="obligations">
     <h2>Obligaciones de Konnect 360</h2>
-    <p>Konnect 360 se compromete a:</p>
+    <p>Konnect 360 se compromete a cumplir con las siguientes obligaciones:</p>
     <ul>
-      <li>Dar acceso a la Plataforma, documentación y funcionalidades contratadas.</li>
-      <li>Enviar confirmación de la adquisición por correo electrónico.</li>
-      <li>Emplear la atención y profesionalidad razonables en la prestación.</li>
+      <li>Dar acceso y poner a disposición del Comprador la Plataforma de Servicios, la documentación y las funcionalidades de la Suscripción contratada, una vez efectuada la compra, así como el resto de los servicios incluidos durante la vigencia de la misma.</li>
+      <li>Enviar al Comprador mediante correo electrónico una confirmación de la adquisición de la Suscripción, así como un enlace con la copia de los presentes Términos.</li>
+      <li>Emplear la atención y profesionalidad que se consideren razonables para la prestación de los servicios, la entrega de los materiales y los Contenidos de la correspondiente Suscripción.</li>
     </ul>
+  </section>
 
-    <h3>Responsabilidades del comprador</h3>
+  <section id="buyer-responsibilities">
+    <h2>Responsabilidades del comprador</h2>
+    <p>El Comprador será responsable de:</p>
+    <ul>
+      <li>Todos aquellos actos que contravengan lo dispuesto en estos Términos, la ley, la moral, las costumbres generalmente aceptadas y el orden público.</li>
+      <li>Cualquier acto que realizara de manera diferente a lo que Konnect 360 designara en sus indicaciones o instrucciones sobre los Servicios.</li>
+      <li>La certeza, exactitud, vigencia y actualidad de los datos con los que rellenara cada uno de los formularios que Konnect 360 le proporcione.</li>
+      <li>Los daños y perjuicios causados por la pérdida, divulgación o descuido de sus datos personales necesarios para el acceso a la Plataforma Online, así como de la correcta custodia de sus contraseñas y credenciales.</li>
+      <li>Usar la Plataforma de Servicios de forma que pueda provocar daños, interrupciones, ineficiencias o defectos en su funcionamiento, o para la transmisión, instalación o publicación de cualquier virus, código malicioso u otros programas o archivos perjudiciales.</li>
+      <li>Quebrantar, o intentar quebrantar, las medidas de seguridad o autenticación en la Plataforma Online.</li>
+      <li>Vulnerar derechos de propiedad intelectual o industrial pertenecientes a Konnect 360 o a terceros, reproduciendo, copiando, distribuyendo o modificando los Contenidos de la Suscripción sin la autorización del titular de los correspondientes derechos.</li>
+      <li>Transmitir o difundir cualquier material obsceno, ofensivo, vulgar o que induzca actuaciones delictivas, denigratorias, difamatorias o violentas, o contrarias a la ley, la moral y el orden público.</li>
+      <li>Amenazar, acechar, dañar o acosar a otras personas, o promover la intolerancia o la discriminación.</li>
+      <li>Enviar correos electrónicos masivos, encuestas u otro tipo de mensajería masiva, ya sea de naturaleza comercial o no.</li>
+    </ul>
     <p>
-      El Comprador será responsable de cumplir estos Términos, la ley vigente y las costumbres aceptadas, así como de la veracidad y vigencia de los datos proporcionados.
+      En todos los casos referidos, que son responsabilidad del Comprador, no habrá lugar a una eventual indemnización de Konnect 360 por daños o perjuicios. Por el contrario, el Comprador responderá de los daños y perjuicios de toda naturaleza que Konnect 360 pueda sufrir como consecuencia de incumplimiento de cualquiera de las obligaciones aquí establecidas.
+    </p>
+    <p>
+      En cualquier caso, la responsabilidad que pudiera ser exigible a Konnect 360 por el Comprador quedará limitada al precio de la Suscripción adquirida.
     </p>
   </section>
 </Legal>
