@@ -4,6 +4,7 @@ import { ClientRouter, fade } from "astro:transitions"
 import Header from "@/components/layout/Header.astro"
 import Footer from "@/components/layout/Footer.astro"
 import BackToTop from "@/components/layout/BackToTop.astro"
+import KonnectChat from "@/components/widgets/KonnectChat.astro"
 import { site } from "@/content/site.config"
 
 interface Props {
@@ -53,28 +54,49 @@ const tenantRedirectUrl = import.meta.env.PUBLIC_URL_REDIRECT_APP_TENNANT ?? ""
         document.documentElement.classList.toggle("dark", isDark)
       })()
     </script>
-  </head>
-  <body class="flex min-h-svh flex-col">
-    <Header transition:persist transition:name="site-header" />
-    <main class="flex-1" transition:animate={fade({ duration: "0.35s" })}>
-      <slot />
-    </main>
-    <div id="widget-chat"></div>
-    <Footer transition:persist transition:name="site-footer" />
-    <BackToTop transition:persist transition:name="back-to-top" />
-    <script type="module" is:inline>
+
+    <script async defer type="module">
       import { konnectchat } from "https://kapi.konnect-360.com/widget/konnectchat.es.min.js"
 
-      konnectchat("widget-chat", {
+      konnectchat("konnect-widget", {
         identifier: "987654321",
         pageBot: {
-          title: "Agente Konnect-360", // string - titulo en página bot
-          botName: "Konnan", // string - nombre del bot
+          title: "Agente Konnect-360",
+          botName: "Konnan",
         },
         pagePresentation: {
-          title: "Atencion al cliente", // string - titulo de presentación
-          withWhatsAppButton: false, // boolean - ocultar boton de whatsapp
-          withHeaderBot: true, // boolean - ver/ocultar header del bot
+          title: "Atencion al cliente",
+          withWhatsAppButton: false,
+          withHeaderBot: true,
+        },
+        userOptions: {
+          classItem: "_",
+          options: [
+            {
+              icon: {
+                source: "https://img.icons8.com/emoji/48/information-emoji.png",
+              },
+              label: "Quiero mas informacion de Konnect 360",
+              message: "Informacion sobre Konnect",
+              action: "info-crm",
+            },
+            {
+              icon: {
+                source: "https://img.icons8.com/emoji/48/receipt-emoji.png",
+              },
+              label: "Listar los planes que ofrece Konnect 360",
+              message: "dame los planes de Konnect",
+              action: "plans-crm",
+            },
+            {
+              icon: {
+                source: "https://img.icons8.com/emoji/48/speech-balloon.png",
+              },
+              label: "Que funcionalidades tiene el CRM",
+              message: "funcionalidades de Konnect",
+              action: "features-crm",
+            },
+          ],
         },
         theme: {
           colors: {
@@ -84,5 +106,15 @@ const tenantRedirectUrl = import.meta.env.PUBLIC_URL_REDIRECT_APP_TENNANT ?? ""
         darkMode: false,
       })
     </script>
+  </head>
+
+  <body class="flex min-h-svh flex-col">
+    <Header transition:persist transition:name="site-header" />
+    <main class="flex-1" transition:animate={fade({ duration: "0.35s" })}>
+      <slot />
+    </main>
+    <div id="konnect-widget"></div>
+    <Footer transition:persist transition:name="site-footer" />
+    <BackToTop transition:persist transition:name="back-to-top" />
   </body>
 </html>

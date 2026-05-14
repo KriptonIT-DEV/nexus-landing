@@ -1,0 +1,232 @@
+---
+import Main from "@/layouts/Main.astro"
+import Container from "@/components/layout/Container.astro"
+import { Badge } from "@/components/ui/badge"
+import { buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { cn } from "@/lib/utils"
+import { ArrowRight, Check, Headphones } from "lucide-react"
+import { plansHero, plans, plansCta } from "@/content/plans"
+---
+
+<Main title="Planes y Precios | Konnect 360">
+  {/* Hero */}
+  <section class="border-b border-border bg-secondary/30">
+    <Container size="narrow" class="py-16 text-center md:py-24">
+      <Badge
+        variant="outline"
+        className="mb-6 font-mono text-xs uppercase tracking-[0.2em]"
+      >
+        {plansHero.badge}
+      </Badge>
+      <h1
+        class="mx-auto max-w-3xl font-display text-5xl leading-[0.95] text-primary md:text-7xl"
+      >
+        {plansHero.title}
+      </h1>
+      <p
+        class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
+      >
+        {plansHero.description}
+      </p>
+    </Container>
+  </section>
+
+  <Container size="wide" class="py-12 md:py-16">
+    <div class="flex flex-col gap-4">
+      {/* Plans grid */}
+      <section
+        class="grid grid-cols-1 items-start gap-4 md:grid-cols-3 md:gap-5"
+        aria-label="Planes de precios"
+      >
+        {
+          plans.map((plan) => (
+            <Card
+              className={cn(
+                "flex flex-col overflow-hidden",
+                plan.featured
+                  ? "relative border-0 bg-primary text-primary-foreground"
+                  : "transition-colors hover:border-primary/30"
+              )}
+            >
+              {plan.featured && (
+                <>
+                  <div
+                    class="absolute -right-16 -top-16 size-48 rounded-full bg-primary-foreground/10"
+                    aria-hidden="true"
+                  />
+                  <div
+                    class="absolute -bottom-10 -left-10 size-36 rounded-full bg-primary-foreground/10"
+                    aria-hidden="true"
+                  />
+                </>
+              )}
+
+              <CardHeader className="relative z-10 gap-4 pb-4">
+                {plan.popular && (
+                  <Badge
+                    className={cn(
+                      "w-fit font-mono text-xs uppercase tracking-[0.2em]",
+                      plan.featured &&
+                        "border-primary-foreground/30 bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30"
+                    )}
+                  >
+                    {plan.popular}
+                  </Badge>
+                )}
+
+                <CardTitle className="font-display text-2xl">
+                  {plan.name}
+                </CardTitle>
+
+                {plan.price !== null ? (
+                  <div class="flex items-baseline gap-1">
+                    <span
+                      class={cn(
+                        "font-display text-5xl leading-none",
+                        !plan.featured && "text-primary"
+                      )}
+                    >
+                      ${plan.price}
+                    </span>
+                    <span
+                      class={cn(
+                        "text-sm",
+                        plan.featured
+                          ? "text-primary-foreground/70"
+                          : "text-muted-foreground"
+                      )}
+                    >
+                      /mes
+                    </span>
+                  </div>
+                ) : (
+                  <span class="font-display text-4xl leading-none text-primary">
+                    A medida
+                  </span>
+                )}
+
+                <CardDescription
+                  className={cn(
+                    "text-sm leading-relaxed",
+                    plan.featured && "text-primary-foreground/80"
+                  )}
+                >
+                  {plan.description}
+                </CardDescription>
+
+                <p
+                  class={cn(
+                    "font-mono text-xs uppercase tracking-[0.2em]",
+                    plan.featured
+                      ? "text-primary-foreground/60"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {plan.contacts}
+                </p>
+              </CardHeader>
+
+              <Separator
+                className={plan.featured ? "bg-primary-foreground/20" : ""}
+              />
+
+              <CardContent className="relative z-10 flex grow flex-col gap-6 pt-6">
+                <ul class="flex grow flex-col gap-3">
+                  {plan.features.map((feature) => (
+                    <li class="flex items-start gap-3">
+                      <Check
+                        size={16}
+                        strokeWidth={2.5}
+                        className={cn(
+                          "mt-0.5 shrink-0",
+                          plan.featured
+                            ? "text-primary-foreground/80"
+                            : "text-primary"
+                        )}
+                      />
+                      <span
+                        class={cn(
+                          "text-sm",
+                          plan.featured
+                            ? "text-primary-foreground/90"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={plan.cta.href}
+                  class={
+                    plan.featured
+                      ? buttonVariants({
+                          size: "lg",
+                          variant: "ghost",
+                          className:
+                            "shrink-0 border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary",
+                        })
+                      : plan.enterprise
+                        ? buttonVariants({ size: "lg", variant: "outline" })
+                        : buttonVariants({ size: "lg" })
+                  }
+                >
+                  {plan.cta.label}
+                  {plan.enterprise ? (
+                    <Headphones size={18} strokeWidth={1.75} />
+                  ) : (
+                    <ArrowRight />
+                  )}
+                </a>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </section>
+
+      {/* CTA */}
+      <Card className="relative overflow-hidden border-0 bg-primary text-primary-foreground">
+        <div
+          class="absolute -right-16 -top-16 size-64 rounded-full bg-primary-foreground/10"
+          aria-hidden="true"
+        />
+        <div
+          class="absolute -bottom-12 -left-12 size-48 rounded-full bg-primary-foreground/10"
+          aria-hidden="true"
+        />
+        <CardContent className="relative z-10 flex flex-col items-center justify-between gap-6 px-8 py-12 md:flex-row md:px-12">
+          <div class="text-center md:text-left">
+            <p class="font-display text-3xl leading-tight md:text-4xl">
+              {plansCta.title}
+            </p>
+            <p class="mt-2 text-sm text-primary-foreground/80">
+              {plansCta.description}
+            </p>
+          </div>
+          <a
+            href={plansCta.button.href}
+            class={buttonVariants({
+              size: "lg",
+              variant: "ghost",
+              className:
+                "shrink-0 border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary",
+            })}
+          >
+            {plansCta.button.label}
+            <ArrowRight />
+          </a>
+        </CardContent>
+      </Card>
+    </div>
+  </Container>
+</Main>

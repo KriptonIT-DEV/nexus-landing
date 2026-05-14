@@ -1,0 +1,24 @@
+<div id="widget-chat"></div>
+
+<script type="module" is:inline>
+  import { konnectchat } from "https://kapi.konnect-360.com/widget/konnectchat.es.min.js"
+
+  konnectchat("widget-chat", {
+    identifier: "987654321",
+    pageBot: {
+      title: "Agente Konnect-360",
+      botName: "Konnan",
+    },
+    pagePresentation: {
+      title: "Atencion al cliente",
+      withWhatsAppButton: false,
+      withHeaderBot: true,
+    },
+    theme: {
+      colors: {
+        "chat-sender-color": "207, 156, 255",
+      },
+    },
+    darkMode: false,
+  })
+</script>

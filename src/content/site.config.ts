@@ -18,6 +18,7 @@ export const nav = {
     { href: "/#why-us", label: "¿Por qué nosotros?", hash: "why-us" },
     { href: "/#services", label: "Servicios", hash: "services" },
     { href: "/about", label: "Nosotros" },
+    { href: "/plans", label: "Planes" },
     { href: "/contact", label: "Contacto" },
   ],
   cta: { label: "Inicia sesión" },
@@ -29,6 +30,7 @@ export const footerLinks = {
     { href: "/#why-us", label: "¿Por qué nosotros?" },
     { href: "/#services", label: "Servicios" },
     { href: "/about", label: "Sobre nosotros" },
+    { href: "/plans", label: "Planes" },
     { href: "/contact", label: "Contacto" },
   ],
   legal: [
