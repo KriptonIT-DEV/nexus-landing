@@ -8,7 +8,7 @@ steps:
       - "-t"
       - "us-east1-docker.pkg.dev/kriptonit-peru/nexus-landing/nexus-landing:latest"
       - "--build-arg"
-      - "PUBLIC_API_BASE_URL=https://konnect.kr36-devel.dev"
+      - "PUBLIC_API_BASE_URL=https://kapi.kr36-devel.dev"
       - "--build-arg"
       - "PUBLIC_URL_REDIRECT_APP_TENNANT=https://{domain}.kr36-devel.dev/app/"
       - "--build-arg"
