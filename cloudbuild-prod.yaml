@@ -1,0 +1,46 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    id: BuildImage
+    args:
+      - "build"
+      - "-f"
+      - "Dockerfile"
+      - "-t"
+      - "us-east1-docker.pkg.dev/kriptonit-peru/nexus-landing/nexus-landing:prod"
+      - "--build-arg"
+      - "PUBLIC_API_BASE_URL=https://konnect.konnect-360.com"
+      - "--build-arg"
+      - "PUBLIC_URL_REDIRECT_APP_TENNANT=https://{domain}.konnect-360.com/app/"
+      - "--build-arg"
+      - "PUBLIC_URL_STATIC_APP_TENNANT=https://konnect.konnect-360.com/app/"
+      - "."
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: PushImage
+    args:
+      - "push"
+      - "us-east1-docker.pkg.dev/kriptonit-peru/nexus-landing/nexus-landing:prod"
+    waitFor: ["BuildImage"]
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    id: DeployService
+    entrypoint: gcloud
+    args:
+      - "run"
+      - "deploy"
+      - "nexus-landing"
+      - "--image"
+      - "us-east1-docker.pkg.dev/kriptonit-peru/nexus-landing/nexus-landing:prod"
+      - "--region"
+      - "us-east1"
+      - "--platform"
+      - "managed"
+      - "--allow-unauthenticated"
+      - "--service-account"
+      - "cloudbuild-trigger-sa@kriptonit-peru.iam.gserviceaccount.com"
+    waitFor: ["PushImage"]
+
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+
+serviceAccount: "projects/kriptonit-peru/serviceAccounts/cloudbuild-trigger-sa@kriptonit-peru.iam.gserviceaccount.com"
