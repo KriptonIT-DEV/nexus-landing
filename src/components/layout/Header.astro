@@ -9,6 +9,8 @@ import { buttonVariants } from "@/components/ui/button"
 
 const { pathname } = Astro.url
 const isHome = pathname === "/"
+const appBase = import.meta.env.PUBLIC_URL_STATIC_APP_TENNANT ?? ""
+const registerUrl = `${appBase.replace(/\/+$/, "")}/register`
 ---
 
 <header
@@ -52,9 +54,17 @@ const isHome = pathname === "/"
         href={import.meta.env.PUBLIC_URL_STATIC_APP_TENNANT}
         target="_blank"
         rel="noopener noreferrer"
-        class={buttonVariants({ size: "sm" })}
+        class={buttonVariants({ size: "sm", variant: "ghost" })}
       >
         {nav.cta.label}
+      </a>
+      <a
+        href={registerUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={buttonVariants({ size: "sm" })}
+      >
+        {nav.ctaRegister.label}
       </a>
     </div>
 
@@ -64,6 +74,7 @@ const isHome = pathname === "/"
         client:load
         items={[...nav.primary]}
         cta={{ label: nav.cta.label, href: import.meta.env.PUBLIC_URL_STATIC_APP_TENNANT }}
+        ctaRegister={{ label: nav.ctaRegister.label, href: registerUrl }}
       />
     </div>
   </Container>

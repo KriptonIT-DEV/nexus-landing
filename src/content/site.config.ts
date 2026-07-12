@@ -22,6 +22,7 @@ export const nav = {
     { href: "/contact", label: "Contacto" },
   ],
   cta: { label: "Inicia sesión" },
+  ctaRegister: { label: "Crea tu cuenta" },
 } as const
 
 export const footerLinks = {

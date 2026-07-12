@@ -16,9 +16,10 @@ type NavItem = { href: string; label: string }
 interface Props {
   items: NavItem[]
   cta: { label: string; href: string }
+  ctaRegister?: { label: string; href: string }
 }
 
-export function MobileMenu({ items, cta }: Props) {
+export function MobileMenu({ items, cta, ctaRegister }: Props) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -51,13 +52,25 @@ export function MobileMenu({ items, cta }: Props) {
           ))}
         </nav>
         <Separator className="mx-4 w-auto" />
-        <div className="px-4 pb-6">
+        <div className="flex flex-col gap-2 px-4 pb-6">
+          {ctaRegister && (
+            <SheetClose asChild>
+              <a
+                href={ctaRegister.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+              >
+                {ctaRegister.label}
+              </a>
+            </SheetClose>
+          )}
           <SheetClose asChild>
             <a
               href={cta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+              className="inline-flex w-full items-center justify-center rounded-md border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
             >
               {cta.label}
             </a>
