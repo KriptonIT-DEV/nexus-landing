@@ -13,7 +13,10 @@ import {
 import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 import { ArrowRight, Check, Headphones } from "lucide-react"
-import { plansHero, plans, plansCta } from "@/content/plans"
+import { plansHero, plans, plansCta, plansNote } from "@/content/plans"
+
+const appBase = (import.meta.env.PUBLIC_URL_STATIC_APP_TENNANT ?? "").replace(/\/+$/, "")
+const resolveHref = (href: string) => (href.startsWith("/register") ? `${appBase}${href}` : href)
 ---
 
 <Main title="Planes y Precios | Konnect 360">
@@ -43,7 +46,7 @@ import { plansHero, plans, plansCta } from "@/content/plans"
     <div class="flex flex-col gap-4">
       {/* Plans grid */}
       <section
-        class="grid grid-cols-1 items-start gap-4 md:grid-cols-3 md:gap-5"
+        class="grid grid-cols-1 items-start gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4"
         aria-label="Planes de precios"
       >
         {
@@ -94,7 +97,7 @@ import { plansHero, plans, plansCta } from "@/content/plans"
                         !plan.featured && "text-primary"
                       )}
                     >
-                      ${plan.price}
+                      S/ {plan.price}
                     </span>
                     <span
                       class={cn(
@@ -167,7 +170,7 @@ import { plansHero, plans, plansCta } from "@/content/plans"
                 </ul>
 
                 <a
-                  href={plan.cta.href}
+                  href={resolveHref(plan.cta.href)}
                   class={
                     plan.featured
                       ? buttonVariants({
@@ -193,6 +196,8 @@ import { plansHero, plans, plansCta } from "@/content/plans"
           ))
         }
       </section>
+
+      <p class="-mt-4 mb-12 text-center text-sm text-muted-foreground">{plansNote}</p>
 
       {/* CTA */}
       <Card className="relative overflow-hidden border-0 bg-primary text-primary-foreground">

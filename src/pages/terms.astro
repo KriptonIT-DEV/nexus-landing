@@ -127,20 +127,20 @@ const sections = [
       <li>Método de pago.</li>
     </ul>
     <p>
-      El pago del precio de la Suscripción se realizará mediante tarjeta de crédito o débito, de conformidad con cualesquiera otros medios de pago en línea que en cada momento se habiliten en la Plataforma Online.
+      El pago del precio de la Suscripción se realiza de forma recurrente (mensual o anual, según el ciclo elegido) a través de Mercado Pago, con tarjeta de crédito o débito o con los demás medios que Mercado Pago habilite. La primera fecha de cobro determina el día de cobro de los periodos siguientes.
     </p>
     <p>
-      Para proceder al pago vía tarjeta de crédito o débito, se solicitará la siguiente información: (a) número de tarjeta; (b) fecha de caducidad; (c) CVV o CSC. Konnect 360 utiliza plataformas de pago de terceros que facilitan la transacción electrónica y proporcionan un ambiente completamente seguro para la realización de la transacción.
+      Los datos del medio de pago se ingresan directamente en Mercado Pago. Konnect 360 no solicita ni recibe los datos de la tarjeta. Si un cobro recurrente es rechazado, Mercado Pago lo reintenta automáticamente; mientras el pago no se regularice, el acceso a la Plataforma Online queda suspendido y los datos de la empresa se conservan.
     </p>
   </section>
 
   <section id="demo">
     <h2>Versión de demostración</h2>
     <p>
-      Konnect 360 podrá ofrecer, de forma temporal y limitada, la posibilidad de probar una única vez una versión de demostración de la Plataforma Online, de carácter gratuito, durante un plazo de 14 días desde el acceso.
+      Konnect 360 ofrece, por una única vez y por empresa, un periodo de prueba gratuito de 14 días desde la activación de la Suscripción. Para activar el periodo de prueba el Comprador debe registrar un medio de pago válido en Mercado Pago; durante la prueba no se realiza ningún cobro, salvo una validación del medio de pago por un importe mínimo que Mercado Pago devuelve automáticamente.
     </p>
     <p>
-      Previamente a que transcurra dicho plazo, Konnect 360 notificará al Comprador por correo electrónico los días restantes de la versión gratuita. Al finalizar el período, la versión de demostración se desactivará automáticamente y se activará la Suscripción de pago mensual recurrente, a menos que el Comprador hubiera cancelado la suscripción en tiempo y forma.
+      Los días restantes del periodo de prueba se muestran en todo momento en la sección Facturación de la Plataforma Online. Al finalizar el periodo de prueba se realiza el primer cobro de la Suscripción (mensual o anual, según lo elegido) y esta se renueva de forma automática, a menos que el Comprador la hubiera cancelado antes desde la Plataforma Online.
     </p>
   </section>
 
@@ -150,15 +150,15 @@ const sections = [
       El pago que el Comprador haga a Konnect 360 se renovará automáticamente al final del periodo de suscripción aplicable, a menos que cancele su Suscripción de pago antes de que finalice el periodo en curso.
     </p>
     <p>
-      Para proceder a la cancelación, deberá ponerse en contacto con el departamento de Customer Experience a través del correo <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a> con la palabra <strong>"BAJA"</strong> en el asunto, tres días hábiles antes de la fecha en la que se renueva la Suscripción.
+      La cancelación se realiza en cualquier momento desde la sección Facturación de la Plataforma Online (opción "Cancelar suscripción"), sin necesidad de aviso previo. También puede solicitarse por correo a <a href="mailto:ventas@konnect-360.com">ventas@konnect-360.com</a>. Al cancelar, no se realizan nuevos cobros; el acceso se mantiene hasta el final del periodo ya pagado y los datos de la empresa se conservan.
     </p>
-    <p>Las casuísticas bajo las cuales Konnect 360 considera que se puede proceder al reembolso total son las siguientes:</p>
+    <p>Política de reembolso:</p>
     <ul>
-      <li><strong>Derecho de desistimiento.</strong> En los contratos celebrados a distancia por un Comprador que tenga la consideración de Consumidor, éste tendrá derecho a desistir del contrato en el plazo de 14 días naturales siguientes a la contratación, sin alegar motivo y sin incurrir en coste alguno.</li>
-      <li><strong>Uso inexistente de la plataforma.</strong> En aquellos casos en los que ni el Comprador ni nadie autorizado hubiera utilizado ninguna de las ventajas de la Suscripción durante el período en curso, Konnect 360 reembolsará íntegramente la cuota. No obstante, solo se devolverá la totalidad correspondiente a los dos primeros meses.</li>
+      <li><strong>Cancelación dentro de los 3 días siguientes a un cobro.</strong> Si el Comprador cancela la Suscripción dentro de los tres (3) días calendario posteriores a un cobro, dicho cobro se reembolsa íntegramente por el mismo medio de pago y el acceso a la Plataforma Online finaliza en ese momento.</li>
+      <li><strong>Cancelación posterior.</strong> Transcurridos los tres (3) días, el cobro del periodo en curso no es reembolsable; el Comprador conserva el acceso hasta el final del periodo pagado.</li>
     </ul>
     <p>
-      En ningún caso el Comprador tendrá derecho a un reembolso parcial de la cuota de suscripción por haber hecho uso de las ventajas asociadas a la Suscripción durante el período anterior a la cancelación.
+      Fuera de estos casos, el Comprador no tendrá derecho a reembolsos parciales por periodos no utilizados.
     </p>
     <p>
       La Suscripción obtenida a través de un código promocional o de regalo no será reembolsable. Konnect 360 no proporcionará reembolsos ni créditos por ningún periodo de suscripción parcial.
@@ -168,9 +168,9 @@ const sections = [
   <section id="payment">
     <h2>Métodos de pago</h2>
     <p>No se aceptarán otras formas de pago diferentes a las descritas a continuación, a menos que Konnect 360 así lo indique mediante comunicación oficial:</p>
-    <p><strong>Pago con tarjeta: Stripe.</strong></p>
+    <p><strong>Pasarela de pagos: Mercado Pago.</strong> Tarjetas de crédito y débito (Visa, Mastercard, American Express, Diners Club), Yape y dinero en cuenta de Mercado Pago. Los cobros se realizan en soles (PEN) y a los precios publicados se les agrega el IGV.</p>
     <p>
-      Se trata de un medio de pago completamente seguro a través de TPV virtual (pasarela de pagos), ya que los datos de la tarjeta bancaria viajan encriptados gracias a un servidor seguro con certificado SSL. Los proveedores de servicios de pago cuentan con la certificación PCI DSS y con el programa 3D-Secure para autenticar a los compradores y prevenir el fraude electrónico. Los datos de la tarjeta de crédito no quedan registrados en ninguna base de datos de Konnect 360.
+      El pago se procesa íntegramente en la plataforma de Mercado Pago, certificada PCI DSS. Los datos de la tarjeta viajan cifrados y nunca son recibidos ni almacenados por Konnect 360; Konnect 360 solo conserva el identificador de la suscripción y el historial de cobros necesario para emitir comprobantes y atender reclamos.
     </p>
   </section>
 
