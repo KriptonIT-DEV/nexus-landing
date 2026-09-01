@@ -1,0 +1,105 @@
+---
+import Legal from "@/layouts/Legal.astro"
+
+const sections = [
+  { id: "scope", label: "Alcance" },
+  { id: "responsible", label: "Responsable del tratamiento" },
+  { id: "data-collected", label: "Datos que se recopilan" },
+  { id: "purpose", label: "Finalidades" },
+  { id: "ai", label: "Uso de inteligencia artificial" },
+  { id: "storage", label: "Conservación y seguridad" },
+  { id: "sharing", label: "Encargados y terceros" },
+  { id: "rights", label: "Derechos ARCO" },
+  { id: "changes", label: "Modificaciones" },
+]
+---
+
+<Legal
+  title="Política de Privacidad del Canal de Atención"
+  description="Cómo se tratan los datos personales proporcionados en los canales de atención (WhatsApp, redes sociales y chat web) operados mediante la plataforma Konnect 360, conforme a la Ley N° 29733."
+  updatedAt="Septiembre 2026"
+  sections={sections}
+  cta={{
+    title: "¿Tienes preguntas sobre esta política?",
+    description: "Escríbenos a ventas@konnect-360.com o contáctanos directamente.",
+  }}
+>
+  <section id="scope">
+    <h2>1. Alcance</h2>
+    <p>
+      Esta política describe el tratamiento de los datos personales que el usuario proporciona al conversar por los canales digitales de atención (WhatsApp, Facebook Messenger, Instagram Direct y chat web, el <strong>"Canal"</strong>) de la empresa titular del Canal (la <strong>"Empresa"</strong>), operados mediante la plataforma <strong>Konnect 360</strong> de Optimus Tech.
+    </p>
+    <p>
+      Aplica de manera supletoria cuando la Empresa no ha publicado una política de privacidad propia para su Canal; en ese caso, la política propia de la Empresa prevalece.
+    </p>
+  </section>
+
+  <section id="responsible">
+    <h2>2. Responsable del tratamiento</h2>
+    <p>
+      El responsable del tratamiento es la <strong>Empresa titular del Canal</strong>, identificada en sus comunicaciones (nombre comercial, número de WhatsApp o cuenta de red social desde la que atiende). Optimus Tech (Konnect 360) actúa como <strong>encargado del tratamiento</strong>: aloja y procesa los datos por cuenta de la Empresa, únicamente para prestar el servicio de atención.
+    </p>
+  </section>
+
+  <section id="data-collected">
+    <h2>3. Datos que se recopilan</h2>
+    <ul>
+      <li><strong>Datos de identificación y contacto</strong> que el usuario proporciona en la conversación: nombre, empresa a la que pertenece, cargo, correo electrónico y número de teléfono.</li>
+      <li><strong>Contenido de la conversación</strong>: mensajes de texto y, si el usuario los envía, notas de voz, imágenes y documentos.</li>
+      <li><strong>Datos técnicos del canal</strong>: identificador de la cuenta de mensajería (número de WhatsApp o ID de la red social), fecha y hora de los mensajes, y registro de aceptación de términos.</li>
+    </ul>
+  </section>
+
+  <section id="purpose">
+    <h2>4. Finalidades del tratamiento</h2>
+    <ul>
+      <li>Atender consultas, solicitudes y reclamos del usuario.</li>
+      <li>Gestionar la relación comercial: registrar al usuario como contacto o cliente potencial, derivarlo a un asesor y dar seguimiento a su caso.</li>
+      <li>Contactar al usuario con información solicitada por él, incluidas propuestas comerciales.</li>
+      <li>Mejorar la calidad de la atención mediante métricas y evaluación de las conversaciones.</li>
+    </ul>
+    <p>
+      Los datos no se utilizan para finalidades distintas sin el consentimiento del usuario.
+    </p>
+  </section>
+
+  <section id="ai">
+    <h2>5. Uso de inteligencia artificial</h2>
+    <p>
+      La primera línea de atención puede estar a cargo de un asistente virtual con inteligencia artificial. Para generar sus respuestas, el contenido de la conversación puede ser procesado por proveedores de modelos de lenguaje bajo acuerdos que prohíben el uso de esos datos para entrenar modelos. Las decisiones comerciales relevantes son siempre confirmadas por personal humano de la Empresa.
+    </p>
+  </section>
+
+  <section id="storage">
+    <h2>6. Conservación y seguridad</h2>
+    <p>
+      Los datos se almacenan en servidores seguros con acceso restringido, cifrado en tránsito y registro de accesos. Se conservan mientras exista la relación con la Empresa o mientras sean necesarios para las finalidades descritas, y luego se eliminan o anonimizan conforme a la normativa aplicable.
+    </p>
+  </section>
+
+  <section id="sharing">
+    <h2>7. Encargados y terceros</h2>
+    <ul>
+      <li><strong>Optimus Tech (Konnect 360)</strong>: encargado del tratamiento, aloja la plataforma de atención.</li>
+      <li><strong>Proveedores de mensajería</strong> (Meta: WhatsApp, Facebook, Instagram): transmiten los mensajes conforme a sus propias políticas.</li>
+      <li><strong>Proveedores de infraestructura y de modelos de IA</strong>: procesan datos únicamente para prestar el servicio.</li>
+    </ul>
+    <p>
+      Fuera de estos encargados, los datos no se venden ni se comparten con terceros, salvo obligación legal o requerimiento de autoridad competente.
+    </p>
+  </section>
+
+  <section id="rights">
+    <h2>8. Derechos ARCO</h2>
+    <p>
+      Conforme a la Ley N° 29733, el usuario puede ejercer sus derechos de <strong>acceso, rectificación, cancelación y oposición</strong> sobre sus datos personales, así como revocar su consentimiento, dirigiéndose a la Empresa titular del Canal por el mismo Canal de atención o por los medios de contacto que la Empresa publique. Si no obtiene respuesta, puede presentar una reclamación ante la Autoridad Nacional de Protección de Datos Personales del Perú.
+    </p>
+  </section>
+
+  <section id="changes">
+    <h2>9. Modificaciones</h2>
+    <p>
+      Esta política puede ser actualizada; la versión vigente estará siempre publicada en esta página con su fecha de actualización.
+    </p>
+  </section>
+</Legal>

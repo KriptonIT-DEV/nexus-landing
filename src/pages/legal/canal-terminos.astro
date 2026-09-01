@@ -1,0 +1,96 @@
+---
+import Legal from "@/layouts/Legal.astro"
+
+const sections = [
+  { id: "object", label: "Objeto" },
+  { id: "titular", label: "Titular del canal" },
+  { id: "acceptance", label: "Aceptación" },
+  { id: "service", label: "Naturaleza del servicio" },
+  { id: "usage", label: "Uso adecuado del canal" },
+  { id: "liability", label: "Responsabilidad" },
+  { id: "data", label: "Datos personales" },
+  { id: "changes", label: "Modificaciones" },
+]
+---
+
+<Legal
+  title="Términos y Condiciones del Canal de Atención"
+  description="Condiciones generales de uso de los canales de atención (WhatsApp, redes sociales y chat web) operados mediante la plataforma Konnect 360."
+  updatedAt="Septiembre 2026"
+  sections={sections}
+  cta={{
+    title: "¿Tienes dudas sobre estos términos?",
+    description: "Escríbenos a ventas@konnect-360.com o contáctanos directamente.",
+  }}
+>
+  <section id="object">
+    <h2>1. Objeto</h2>
+    <p>
+      Los presentes Términos y Condiciones regulan el uso de los canales digitales de atención (WhatsApp, Facebook Messenger, Instagram Direct y chat web, en adelante el <strong>"Canal"</strong>) que la empresa titular del Canal (en adelante, la <strong>"Empresa"</strong>) pone a disposición de sus clientes y usuarios, operados tecnológicamente mediante la plataforma <strong>Konnect 360</strong> de Optimus Tech.
+    </p>
+    <p>
+      Estos términos aplican de manera supletoria cuando la Empresa no ha publicado términos y condiciones propios para su Canal. Si la Empresa cuenta con términos propios, estos prevalecen sobre el presente documento.
+    </p>
+  </section>
+
+  <section id="titular">
+    <h2>2. Titular del canal</h2>
+    <p>
+      El Canal es operado por y en nombre de la Empresa que lo publica e identifica en sus comunicaciones (nombre comercial, número de teléfono o cuenta de red social desde la que se atiende). Konnect 360 y Optimus Tech actúan únicamente como proveedores tecnológicos de la plataforma de mensajería y no son parte de la relación comercial entre la Empresa y el usuario.
+    </p>
+  </section>
+
+  <section id="acceptance">
+    <h2>3. Aceptación</h2>
+    <p>
+      Al responder afirmativamente al mensaje de aceptación enviado por el Canal, o al continuar la conversación después de haber sido informado de estos términos, el usuario declara haberlos leído y aceptado. La aceptación se solicita una única vez y queda registrada con fecha y hora.
+    </p>
+  </section>
+
+  <section id="service">
+    <h2>4. Naturaleza del servicio</h2>
+    <ul>
+      <li>La primera línea de atención del Canal puede estar a cargo de un <strong>asistente virtual (bot con inteligencia artificial)</strong>. El asistente se identifica como tal cuando se le pregunta y nunca afirma ser una persona.</li>
+      <li>La conversación puede ser transferida a un <strong>agente humano</strong> de la Empresa cuando el caso lo requiera o el usuario lo solicite.</li>
+      <li>La información brindada por el asistente virtual es de carácter orientativo. Las condiciones comerciales definitivas (precios, plazos, propuestas) son confirmadas por el personal de la Empresa.</li>
+      <li>La atención está sujeta al horario definido por la Empresa; fuera de ese horario los mensajes quedan registrados para su atención posterior.</li>
+    </ul>
+  </section>
+
+  <section id="usage">
+    <h2>5. Uso adecuado del canal</h2>
+    <p>El usuario se compromete a hacer un uso adecuado del Canal. Está prohibido:</p>
+    <ul>
+      <li>Enviar contenido ilegal, ofensivo, difamatorio o que vulnere derechos de terceros.</li>
+      <li>Suplantar la identidad de otra persona o proporcionar datos falsos.</li>
+      <li>Usar el Canal para enviar publicidad no solicitada o intentar vulnerar la seguridad de la plataforma.</li>
+    </ul>
+    <p>
+      La Empresa puede suspender la atención por el Canal ante un uso indebido, sin perjuicio de las acciones legales que correspondan.
+    </p>
+  </section>
+
+  <section id="liability">
+    <h2>6. Responsabilidad</h2>
+    <p>
+      La Empresa es responsable del contenido de las respuestas y de la gestión comercial realizada a través del Canal. Optimus Tech responde por la disponibilidad y seguridad de la plataforma tecnológica conforme a los acuerdos de servicio suscritos con la Empresa, y no asume responsabilidad por las obligaciones comerciales entre la Empresa y el usuario.
+    </p>
+    <p>
+      El servicio de mensajería subyacente (WhatsApp, Facebook, Instagram) es provisto por terceros y está sujeto a sus propios términos y disponibilidad.
+    </p>
+  </section>
+
+  <section id="data">
+    <h2>7. Datos personales</h2>
+    <p>
+      El tratamiento de los datos personales proporcionados a través del Canal se rige por la <a href="/legal/canal-privacidad">Política de Privacidad del Canal de Atención</a>, conforme a la Ley N° 29733 — Ley de Protección de Datos Personales del Perú y su Reglamento.
+    </p>
+  </section>
+
+  <section id="changes">
+    <h2>8. Modificaciones</h2>
+    <p>
+      Estos términos pueden ser actualizados; la versión vigente estará siempre publicada en esta página con su fecha de actualización. El uso del Canal con posterioridad a una actualización implica la aceptación de la versión vigente.
+    </p>
+  </section>
+</Legal>
